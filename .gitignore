@@ -1,0 +1,8 @@
+coc/
+iterm2/
+gtk-2.0/
+spicetify/
+*.tmp*
+*embeddings_db*
+*DS_Store
+*Icon?

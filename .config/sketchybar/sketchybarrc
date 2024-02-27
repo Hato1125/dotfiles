@@ -1,0 +1,58 @@
+#!/bin/sh
+
+readonly CURRENT_DIR=~/.config/sketchybar
+readonly ELEMENTS_DIR=${CURRENT_DIR}/elements
+readonly PLUGINS_DIR=${CURRENT_DIR}/plugins
+readonly PALLETS_DIR=${CURRENT_DIR}/pallets
+readonly THEMES_DIR=${CURRENT_DIR}/themes
+
+source ${PALLETS_DIR}/common_color.sh
+source ${THEMES_DIR}/theme_system.sh
+
+sketchybar --bar                                      \
+  color=${BAR_BACK_COLOR}                             \
+  border_color=${BAR_BORDER_COLOR}                    \
+  border_width=1                                      \
+  position=bottom                                     \
+  height=50                                           \
+  margin=16                                           \
+  y_offset=8                                          \
+  corner_radius=25                                    \
+  blur_radius=25                                      \
+  topmost=on                                          \
+  font_smoothing=on                                   \
+
+sketchybar --default                                  \
+  label.color=${LABEL_NORMAL_COLOR}                   \
+  label.highlight_color=${LABEL_HIGHLIGHT_COLOR}      \
+  label.font.family="monaspace Radon"                 \
+  label.font.style="bold"                             \
+  label.font.size=13                                  \
+  label.padding_left=8                                \
+  icon.color=${ICON_NORMAL_COLOR}                     \
+  icon.highlight_color=${ICON_HIGHLIGHT_COLOR}        \
+  icon.font.family="JetBrainsMono Nerd Font"          \
+  icon.font.style="bold"                              \
+  icon.font.size=16                                   \
+  background.drawing=off                              \
+  background.padding_left=16                          \
+  background.padding_right=16                         \
+  popup.height=35                                     \
+  popup.y_offset=-10                                  \
+  popup.background.color=${POPUP_BACK_COLOR}          \
+  popup.background.border_color=${POPUP_BORDER_COLOR} \
+  popup.background.border_width=1                     \
+  popup.background.corner_radius=8                    \
+
+source ${ELEMENTS_DIR}/apple.sh
+source ${ELEMENTS_DIR}/appbar.sh
+source ${ELEMENTS_DIR}/brew.sh
+source ${ELEMENTS_DIR}/notify.sh
+source ${ELEMENTS_DIR}/clock.sh
+source ${ELEMENTS_DIR}/date.sh
+source ${ELEMENTS_DIR}/space.sh
+
+sketchybar --update
+sketchybar --hotload true
+
+echo "sketchybar configuration loaded.."

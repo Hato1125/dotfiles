@@ -1,0 +1,8 @@
+require('plugins.s-alpha')
+require('plugins.s-autosave')
+require('plugins.s-blanket')
+require('plugins.s-toggleterm')
+require('plugins.s-telescope')
+require('plugins.s-treesitter')
+require('plugins.s-lualine')
+require('plugins.s-colorizer')
