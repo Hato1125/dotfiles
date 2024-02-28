@@ -7,11 +7,13 @@ yabai -m space 1 --label code
 yabai -m space 2 --label work
 yabai -m space 3 --label music
 yabai -m space 4 --label game
+yabai -m space 5 --label free 
  
 yabai -m config --space 1 layout bsp
 yabai -m config --space 2 layout bsp
 yabai -m config --space 3 layout bsp
 yabai -m config --space 4 layout float
+yabai -m config --space 5 layout float
 
 yabai -m config                              \
     external_bar                on           \
@@ -28,15 +30,15 @@ yabai -m config                              \
     split_ratio                 0.50         \
     split_type                  auto         \
     auto_balance                off          \
-    top_padding                 61           \
+    top_padding                 20           \
     left_padding                20           \
     right_padding               20           \
-    bottom_padding              20           \
+    bottom_padding              85           \
     window_gap                  25           \
     layout                      bsp          \
     mouse_modifier              fn           \
     mouse_action1               move         \
     mouse_action2               resize       \
-    mouse_drop_action           swap
+    mouse_drop_action           swap         \
 
 echo "yabai configuration loaded.."

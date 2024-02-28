@@ -3,7 +3,9 @@ sketchybar --add item brew left                                       \
              icon="󰆧"                                                 \
              icon.font.size=20                                        \
              icon.padding_left=16                                     \
+             icon.highlight_color=${BREW_ERROR_COLOR}                 \
              label.padding_right=16                                   \
+             label.highlight_color=${BREW_ERROR_COLOR}                \
              background.color=${BREW_BRACKET_BACK_COLOR}              \
              background.border_color=${BREW_BRACKET_BORDER_COLOR}     \
              background.border_width=1                                \
