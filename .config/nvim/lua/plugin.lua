@@ -4,15 +4,9 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'Pocco81/auto-save.nvim'
   use 'nvim-treesitter/nvim-treesitter'
-  use 'morhetz/gruvbox'
-  use 'shaunsingh/nord.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
-  use 'Mofiqul/vscode.nvim'
   use 'goolord/alpha-nvim'
-  use 'projekt0n/github-nvim-theme'
-  use 'folke/tokyonight.nvim'
   use 'sainnhe/everforest'
-  use 'cocopon/iceberg.vim'
   use 'norcalli/nvim-colorizer.lua'
   use 'ramojus/mellifluous.nvim'
   use 'xiyaowong/transparent.nvim'
@@ -36,12 +30,5 @@ return require('packer').startup(function(use)
   use {
     'akinsho/toggleterm.nvim',
     tag = '*'
-  }
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = {
-      'nvim-tree/nvim-web-devicons',
-      opt = true
-    }
   }
 end)

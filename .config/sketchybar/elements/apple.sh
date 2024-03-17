@@ -18,12 +18,12 @@ sketchybar --add item apple.restart popup.apple                             \
            --set apple.restart                                              \
              icon="󰜉"                                                       \
              label="Restart"                                                \
-             click_script="sudo shutdown -r now
+             click_script="shutdown -r now
                            sketchybar -m --set apple popup.drawing=off"     \
 
 sketchybar --add item apple.shutdown popup.apple                            \
            --set apple.shutdown                                             \
              icon="󰐥"                                                       \
              label="Shutdown"                                               \
-             click_script="sudo shutdown -h now
+             click_script="shutdown -h now
                            sketchybar -m --set apple popup.drawing=off"     \

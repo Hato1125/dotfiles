@@ -3,18 +3,18 @@ if [ -n $(command -v brew) ]; then
   if [ 0 -lt $update_num  ]; then
     result_icon="󰆧"
     result_icon_size=20
-    result_label="Brew: There are ${update_num} updates."
+    result_label="${update_num}"
     result_is_error=0
   else
     result_icon="󱐝"
     result_icon_size=20
-    result_label="Brew: No updates."
+    result_label="0"
     result_is_error=off
   fi
 else
   result_icon=""
   result_icon_size=15
-  result_label="Brew not found."
+  result_label=""
   result_is_error=on
 fi
 

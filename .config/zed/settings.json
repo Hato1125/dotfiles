@@ -2,14 +2,14 @@
   "features": {
     "copilot": false
   },
-  "theme": "Gruvbox Light Soft",
+  "theme": "Gruvbox Dark Soft",
   "autosave": "on_focus_change",
   "tab_size": 2,
   "confirm_quit": true,
   "ui_font_family": "Monaspace Radon semibold",
   "ui_font_size": 15,
   "buffer_line_height": "comfortable",
-  "buffer_font_size": 14,
+  "buffer_font_size": 13,
   "buffer_font_family": "Monaspace Radon medium",
   "buffer_font_features": {
     "liga": true,

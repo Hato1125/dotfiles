@@ -14,7 +14,7 @@ do
                icon.color=${SPACE_INACTIVE_ICON_COLOR}                \
                icon.highlight_color=${SPACE_ACTIVE_ICON_COLOR}        \
                icon=${SPACE_ICONS[i]}                                 \
-               icon.font.family="monaspace Radon"                     \
+               icon.font.family="JetBrainsMono Nerd Font"             \
                icon.font.style="bold"                                 \
                icon.font.size=13                                      \
                icon.padding_left=8                                    \

@@ -3,5 +3,5 @@
 sketchybar --add item notify right    \
            --set notify               \
              icon="󰂚"                 \
-             icon.font.size=20        \
+             icon.font.size=18        \
              y_offset=1               \

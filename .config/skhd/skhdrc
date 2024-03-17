@@ -1,0 +1,4 @@
+alt - t : open -a /Applications/iTerm.app
+alt - d : open -a /Applications/Discord.app
+alt - e : open -a /Applications/Zed.app
+alt - f : open ~

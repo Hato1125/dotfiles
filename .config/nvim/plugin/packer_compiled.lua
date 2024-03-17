@@ -94,40 +94,15 @@ _G.packer_plugins = {
     path = "/Users/toha/.local/share/nvim/site/pack/packer/start/everforest",
     url = "https://github.com/sainnhe/everforest"
   },
-  ["github-nvim-theme"] = {
-    loaded = true,
-    path = "/Users/toha/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
-    url = "https://github.com/projekt0n/github-nvim-theme"
-  },
-  gruvbox = {
-    loaded = true,
-    path = "/Users/toha/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/morhetz/gruvbox"
-  },
-  ["iceberg.vim"] = {
-    loaded = true,
-    path = "/Users/toha/.local/share/nvim/site/pack/packer/start/iceberg.vim",
-    url = "https://github.com/cocopon/iceberg.vim"
-  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/Users/toha/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
-  ["lualine.nvim"] = {
-    loaded = true,
-    path = "/Users/toha/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
   ["mellifluous.nvim"] = {
     loaded = true,
     path = "/Users/toha/.local/share/nvim/site/pack/packer/start/mellifluous.nvim",
     url = "https://github.com/ramojus/mellifluous.nvim"
-  },
-  ["nord.nvim"] = {
-    loaded = true,
-    path = "/Users/toha/.local/share/nvim/site/pack/packer/start/nord.nvim",
-    url = "https://github.com/shaunsingh/nord.nvim"
   },
   ["nvcode-color-schemes.vim"] = {
     loaded = true,
@@ -143,12 +118,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/toha/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
-  },
-  ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/toha/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
-    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -180,20 +149,10 @@ _G.packer_plugins = {
     path = "/Users/toha/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "/Users/toha/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
-  },
   ["transparent.nvim"] = {
     loaded = true,
     path = "/Users/toha/.local/share/nvim/site/pack/packer/start/transparent.nvim",
     url = "https://github.com/xiyaowong/transparent.nvim"
-  },
-  ["vscode.nvim"] = {
-    loaded = true,
-    path = "/Users/toha/.local/share/nvim/site/pack/packer/start/vscode.nvim",
-    url = "https://github.com/Mofiqul/vscode.nvim"
   }
 }
 

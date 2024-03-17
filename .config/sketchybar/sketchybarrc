@@ -25,7 +25,7 @@ sketchybar --bar                                      \
 sketchybar --default                                  \
   label.color=${LABEL_NORMAL_COLOR}                   \
   label.highlight_color=${LABEL_HIGHLIGHT_COLOR}      \
-  label.font.family="monaspace Radon"                 \
+  label.font.family="JetBrainsMono Nerd Font"         \
   label.font.style="bold"                             \
   label.font.size=13                                  \
   label.padding_left=8                                \
@@ -53,6 +53,6 @@ source ${ELEMENTS_DIR}/date.sh
 source ${ELEMENTS_DIR}/space.sh
 
 sketchybar --update
-sketchybar --hotload true
+sketchybar --hotload on
 
 echo "sketchybar configuration loaded.."

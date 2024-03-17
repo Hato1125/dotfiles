@@ -13,7 +13,7 @@ vim.opt.smartindent = false
 
 vim.opt.number = true
 vim.opt.wrap = false
-vim.opt.background = 'light'
+vim.opt.background = 'dark'
 vim.opt.termguicolors = true
 
 vim.g.nord_contrast = true
@@ -25,6 +25,6 @@ vim.g.nord_bold = false
 vim.opt.termguicolors = true
 
 vim.opt.laststatus = 2
-vim.cmd[[colorscheme gruvbox]]
+vim.cmd[[colorscheme gruber]]
 
 require('plugins/init')
