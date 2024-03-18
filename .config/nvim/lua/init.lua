@@ -1,7 +1,6 @@
--- 参考: https://namileriblog.com/mac/neovim/#i-7
 vim.opt.fileencoding = 'utf-8'
-vim.opt.swapfile = false
 vim.opt.helplang = 'ja'
+vim.opt.swapfile = false
 
 vim.opt.clipboard:append({ 'unnamedplus' })
 
@@ -23,6 +22,11 @@ vim.g.nord_italic = false
 vim.g.nord_uniform_diff_background = true
 vim.g.nord_bold = false
 vim.opt.termguicolors = true
+vim.opt.list = true
+vim.opt.listchars = {
+  trail = '.',
+}
+
 
 vim.opt.laststatus = 2
 vim.cmd[[colorscheme gruber]]

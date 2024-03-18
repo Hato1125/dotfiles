@@ -1,5 +1,8 @@
 local builtin = require('telescope.builtin')
-local opts = { noremap = true, silent = true }
+local opts = {
+  noremap = true,
+  silent = true
+}
 
 -- leader
 vim.g.mapleader = ' '
@@ -21,7 +24,3 @@ vim.keymap.set('n', '<leader>l', '<C-w>l')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, opts)
 vim.keymap.set('n', '<leader>fg', builtin.git_files, opts)
 vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>', opts)
-
--- toggleterm
-vim.keymap.set('n', '<leader>tt', ':ToggleTerm size=40 dir=./ name=Hato<CR>', opts)
-vim.keymap.set('i', '<esc>', 'exit<CR>:q<CR>', opts)

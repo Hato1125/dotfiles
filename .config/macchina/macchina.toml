@@ -1,0 +1,11 @@
+theme = "black"
+show = [
+  "Machine",
+  "Kernel",
+  "Distribution",
+  "OperatingSystem",
+  "WindowManager",
+  "Shell",
+  "Terminal",
+  "Resolution",
+]

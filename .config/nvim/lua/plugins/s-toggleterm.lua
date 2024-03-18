@@ -1,8 +1,9 @@
 require('toggleterm').setup {
-  open_mapping = [[<c-t>]],
+  open_mapping = [[<c-\>]],
   direction = 'float',
   close_on_exit = false,
   float_opts = {
-    border = 'curved'
-  }
+    border = 'curved',
+    title_pos = 'center',
+  },
 }
