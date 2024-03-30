@@ -24,3 +24,6 @@ vim.keymap.set('n', '<leader>l', '<C-w>l')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, opts)
 vim.keymap.set('n', '<leader>fg', builtin.git_files, opts)
 vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>', opts)
+
+-- coc
+vim.keymap.set('n', 'gd', '<Plug>(coc-definition)', { silent = true })
