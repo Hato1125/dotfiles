@@ -4,6 +4,7 @@ gtk-2.0/
 spicetify/
 raycast/
 spicetify/
+configstore/
 
 *.tmp*
 *embeddings_db*
