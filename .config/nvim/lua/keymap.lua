@@ -7,6 +7,10 @@ local opts = {
 -- leader
 vim.g.mapleader = ' '
 
+-- common
+vim.keymap.set('n', '<C-f>', ':/')
+vim.keymap.set('n', '<C-j>', ':%s/')
+
 -- change mode
 vim.keymap.set('i', 'jk', '<esc>', opts)
 
@@ -22,7 +26,7 @@ vim.keymap.set('n', '<leader>l', '<C-w>l')
 
 -- telescope
 vim.keymap.set('n', '<leader>ff', builtin.find_files, opts)
-vim.keymap.set('n', '<leader>fg', builtin.git_files, opts)
+vim.keymap.set('n', '<leader>fg', builtin.buffers, opts)
 vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>', opts)
 
 -- coc

@@ -13,6 +13,8 @@ vim.opt.background = 'dark'
 vim.opt.termguicolors = true
 vim.opt.laststatus = 2
 
+vim.wo.cursorline = true
+
 vim.g.nord_contrast = true
 vim.g.nord_borders = false
 vim.g.nord_disable_background = false
