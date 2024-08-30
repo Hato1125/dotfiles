@@ -1,0 +1,23 @@
+[ags]
+type = "tool"
+name = "ags"
+install = 'ags'
+manager = "paru"
+
+[matugen]
+type = "tool"
+name = "matugen"
+install = "matugen-bin"
+manager = "paru"
+
+[neovim]
+type = "tool"
+name = "nvim"
+install = "neovim"
+manager = "paru"
+
+[swww]
+type = "tool"
+name = "swww"
+install = "swww-git"
+manager = "paru"
