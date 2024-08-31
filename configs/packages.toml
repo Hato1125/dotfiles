@@ -1,3 +1,21 @@
+[bun]
+type = "tool"
+name = "bun"
+install = "bun-bin"
+manager = "paru"
+
+[ttf-roboto]
+type = "font"
+name = "Roboto"
+install = "ttf-roboto"
+manager = "paru"
+
+[material-symbol]
+type = "font"
+name = "MaterialSymbolsSharp"
+install = "material-symbols-git"
+manager = "paru"
+
 [ags]
 type = "tool"
 name = "ags"

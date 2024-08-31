@@ -21,11 +21,11 @@ def main():
 def package_install(manager: str, package: str):
   match manager:
     case 'pacman':
-      subprocess.run(f'sudo pacman {package}', shell=True)
+      subprocess.run(['sudo', 'pacman', package], shell=True)
     case 'yay':
-      subprocess.run(f'yay -S {package}', shell=True)
+      subprocess.run(['yay', '-S', 'package'], shell=True)
     case 'paru':
-      subprocess.run(f'paru -S {package}', shell=True)
+      subprocess.run(['paru', '-S', 'package'], shell=True)
     case _:
       raise ValueError('Invalid package manager')
 
@@ -33,7 +33,7 @@ def check_and_install_packages(packages: dict):
   for key in packages:
     package = packages[key]
     if package['type'] == 'font':
-      result = subprocess.run(f'fc-list "{package['font']}"', shell=False)
+      result = subprocess.run(['fc-list', f'"{package['name']}"'], shell=False)
       if result is None:
         package_install(package['manager'], package['name'])
     elif package['type'] == 'tool':
