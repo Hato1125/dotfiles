@@ -1,3 +1,7 @@
+[hypr]
+src = "hypr"
+dest = ".config/hypr"
+
 [nvim]
 src = "nvim"
 dest = ".config/nvim"
