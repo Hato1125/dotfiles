@@ -1,0 +1,3 @@
+[nvim]
+src = "nvim"
+dest = ".config/nvim"
