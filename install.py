@@ -21,26 +21,32 @@ def main():
 def package_install(manager: str, package: str):
   match manager:
     case 'pacman':
-      subprocess.run(['sudo', 'pacman', package], shell=True)
+      subprocess.run([f'sudo pacman {package}'], shell=True)
     case 'yay':
-      subprocess.run(['yay', '-S', 'package'], shell=True)
+      subprocess.run([f'yay -S {package}'], shell=True)
     case 'paru':
-      subprocess.run(['paru', '-S', 'package'], shell=True)
+      subprocess.run([f'paru -S {package}'], shell=True)
     case _:
       raise ValueError('Invalid package manager')
+
+def package_check_install(manager: str, package: str) -> bool:
+  result: subprocess.CompletedProcess;
+  match manager:
+    case 'pacman':
+      result = subprocess.run(['pacman', '-Qs', package], shell=False, capture_output=True, text=True)
+    case 'yay':
+      result = subprocess.run(['yay', '-Qs', package], shell=False, capture_output=True, text=True)
+    case 'paru':
+      result = subprocess.run(['paru', '-Qs', package], shell=False, capture_output=True, text=True)
+    case _:
+      raise ValueError('Invalid package manager')
+  return len(result.stdout) != 0
 
 def check_and_install_packages(packages: dict):
   for key in packages:
     package = packages[key]
-    if package['type'] == 'font':
-      result = subprocess.run(['fc-list', f'"{package['name']}"'], shell=False)
-      if result is None:
-        package_install(package['manager'], package['name'])
-    elif package['type'] == 'tool':
-      if shutil.which(package['name']) is None:
-        package_install(package['manager'], package['install'])
-    else:
-      raise ValueError('Invalid package type')
+    if not package_check_install(package['manager'], package['name']):
+      package_install(package['manager'], package['name'])
 
 def create_symlink(src: pathlib.Path, dest: pathlib.Path):
   if not os.path.exists(dest):
