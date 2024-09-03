@@ -1,5 +1,6 @@
 # Dotfiles
 Small configuration for Hyprland.
+![Desktop](assets/desktop.webp)
 
 # Installation
 The installation requires Python3, so please install it in advance.

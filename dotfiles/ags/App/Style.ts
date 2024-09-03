@@ -20,7 +20,7 @@ export default (): void => {
   Utils.writeFile(
     MaterialColor.GetPaletteCss(
       Wallpaper.GetWallpaper(),
-      PaletteTheme.Dark
+      PaletteTheme.Light
     ),
     COLOR_CSS
   );
