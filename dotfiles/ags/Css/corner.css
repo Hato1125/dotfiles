@@ -1,0 +1,9 @@
+.statusbar-corner {
+  background-color: @surface;
+  border-radius: 20px;
+}
+
+.screen-corner {
+  background-color: black;
+  border-radius: 20px;
+}

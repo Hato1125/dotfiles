@@ -1,0 +1,40 @@
+window {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+label {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', 'Noto Sans CJK HK';
+  font-size: 16px;
+  font-weight: bold;
+  color: @on-surface;
+}
+
+.flex {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Flex', 'Noto Sans CJK HK';
+  font-size: 16px;
+  font-weight: bold;
+  color: @on-surface;
+}
+
+.symbol {
+  font-family:
+    "Material Symbols Rounded",
+    "MaterialSymbolsRounded",
+    "Material Symbols Outlined",
+    "Material Symbols Sharp";
+  font-weight: bold;
+  font-size: 18px;
+  color: @on-surface;
+}

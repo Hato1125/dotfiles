@@ -2,6 +2,10 @@
 name = "ttf-roboto"
 manager = "paru"
 
+[ttf-roboto-flex]
+name = "ttf-roboto-flex"
+manager = "paru"
+
 [material-symbol]
 name = "ttf-material-symbols-variable"
 manager = "paru"
@@ -11,7 +15,7 @@ name = "bun-bin"
 manager = "paru"
 
 [ags]
-name = 'ags'
+name = 'aylurs-gtk-shell'
 manager = "paru"
 
 [matugen]
@@ -24,20 +28,4 @@ manager = "paru"
 
 [swww]
 name = "swww"
-manager = "paru"
-
-[libastal]
-name = "libastal-git"
-manager = "paru"
-
-[lua-libastal]
-name = "lua-libastal-git"
-manager = "paru"
-
-[lua-lgi]
-name = "lua-lgi-git"
-manager = "paru"
-
-[lua]
-name = "lua"
 manager = "paru"

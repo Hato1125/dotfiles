@@ -1,3 +1,7 @@
+[ags]
+src = "ags"
+dest = ".config/ags"
+
 [hypr]
 src = "hypr"
 dest = ".config/hypr"
