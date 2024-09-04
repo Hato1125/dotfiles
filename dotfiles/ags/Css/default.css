@@ -2,12 +2,27 @@ window {
   margin: 0;
   padding: 0;
   background-color: transparent;
+  background-image: radial-gradient(circle, transparent 0%, transparent 0%);
 }
 
 button {
   margin: 0;
   padding: 0;
+  border-radius: 9999px;
+  background-size: 1000% 1000%;
   background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: none;
+}
+
+button:active {
+  transition-duration: 0.3s, 0ms, 0.3s, 0.2s, 0.3s, 0.2s;
+  animation: ripple 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle, mix(@on-surface, @surface, 0.85) 50%, transparent 0%);
 }
 
 label {
@@ -37,4 +52,51 @@ label {
   font-weight: bold;
   font-size: 18px;
   color: @on-surface;
+}
+
+.scrim {
+  background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.85) 100%);
+}
+
+.dialog {
+  padding: 24px;
+  border-radius: 24px;
+  background-color: @surface-container-high;
+}
+
+.dialog .symbol {
+  color: @secondary;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.dialog .title {
+  color: @on-surface;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.dialog .content {
+  font-size: 14px;
+  font-weight: 500;
+  color: @on-surface-variant;
+}
+
+.dialog button {
+  padding: 8px 24px;
+}
+
+.dialog button label {
+  color: @primary;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@keyframes ripple {
+  from {
+    background-size: 0% 0%;
+  }
+  to {
+    background-size: 1000% 1000%;
+  }
 }

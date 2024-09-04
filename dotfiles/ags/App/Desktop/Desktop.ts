@@ -11,6 +11,7 @@ import {
 } from '@App/Corner/Corner';
 
 import Statusbar from '@App/Desktop/Statusbar/Statusbar';
+import PowerAction from '@App/PowerAction/PowerAction';
 
 type desktopWindowType = (monitor: number) => Gtk.Window;
 const DESKTOP_WINDOW: desktopWindowType[] = [
@@ -20,7 +21,9 @@ const DESKTOP_WINDOW: desktopWindowType[] = [
 ];
 
 type popupWindowType = () => Gtk.Window;
-const POPUP_WINDOW: popupWindowType[] = [];
+const POPUP_WINDOW: popupWindowType[] = [
+  PowerAction,
+];
 
 function addMonitorDesktopWindows(monitor: number): void {
   for (const window of DESKTOP_WINDOW)
