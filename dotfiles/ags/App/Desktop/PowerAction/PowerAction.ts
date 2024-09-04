@@ -87,6 +87,7 @@ export default () => Widget.Window({
   class_name: 'shutdown',
   exclusivity: 'ignore',
   layer: 'overlay',
+  visible: false,
   anchor: ['top', 'bottom', 'left', 'right'],
   child: Layout()
 });

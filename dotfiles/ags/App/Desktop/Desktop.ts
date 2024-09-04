@@ -8,10 +8,10 @@ import Hyprland from "@Service/Hyprland";
 import {
   ScreenCorners,
   StatusbarCorners,
-} from '@App/Corner/Corner';
+} from '@App/Desktop/Corner/Corner';
 
 import Statusbar from '@App/Desktop/Statusbar/Statusbar';
-import PowerAction from '@App/PowerAction/PowerAction';
+import PowerAction from '@App/Desktop/PowerAction/PowerAction';
 
 type desktopWindowType = (monitor: number) => Gtk.Window;
 const DESKTOP_WINDOW: desktopWindowType[] = [
