@@ -5,7 +5,11 @@ import Hyprland from '@Service/Hyprland';
 
 const keyLayout = Variable('');
 
-Hyprland.connect("keyboard-layout", (...[, , layoutName]: string) => {
+Hyprland.connect("keyboard-layout", (
+  _0: unknown,
+  _1: unknown,
+  layoutName: string
+) => {
   keyLayout.setValue(
     layoutName
       .trim()

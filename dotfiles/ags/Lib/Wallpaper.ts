@@ -41,6 +41,12 @@ export enum TransitionType {
 }
 
 export class Wallpaper {
+  static IsRunning(): boolean {
+    return Utils.exec(
+      'ps aux | grep swww-daemon | grep -v grep'
+    ).length > 0;
+  }
+
   static Init(): void {
     if(!this.IsRunning())
       Utils.exec('swww-daemon');
@@ -82,32 +88,21 @@ export class Wallpaper {
 
     let info: string[];
     if (monitor) {
-      const finfo = infos.find(info => {
-        return info[0] === monitor;
-      });
-      if (finfo)
-        info = finfo;
-      else
-        return '';
+      const finfo = infos.find(info => info[0] === monitor);
+      if (!finfo)
+        return String();
+      info = finfo;
     } else {
       info = infos[0];
     }
 
-    const result = info.find(elem => {
-      return this.CheckExtension(elem);
-    });
-    return result ? result : '';
-  }
-
-  static IsRunning(): boolean {
-    return Utils.exec(
-      'ps aux | grep swww-daemon | grep -v grep'
-    ).length > 0;
+    const result = info.find(elem => this.CheckExtension(elem));
+    return result ? result : String();
   }
 
   private static CheckExtension(path: string): boolean {
-    const lower = path.toLowerCase();
-    if (lower.endsWith('jpeg')
+    const lower: string = path.toLowerCase();
+    return lower.endsWith('jpeg')
       || lower.endsWith('png')
       || lower.endsWith('gif')
       || lower.endsWith('pnm')
@@ -115,10 +110,7 @@ export class Wallpaper {
       || lower.endsWith('tiff')
       || lower.endsWith('webp')
       || lower.endsWith('bmp')
-      || lower.endsWith('farbfeld')) {
-      return true;
-    }
-    return false;
+      || lower.endsWith('farbfeld');
   }
 
   private static _transitionType: TransitionType = TransitionType.None;

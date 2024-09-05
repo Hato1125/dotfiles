@@ -27,5 +27,5 @@ export default () => Widget.Box({
   hexpand: true,
   vertical: false,
   spacing: 6,
-  children: [...Array(MAX_WORKSPACE)].map((_, i) => WorkspaceButton(i + 1)),
+  children: [...Array(MAX_WORKSPACE)].map((_: unknown, i) => WorkspaceButton(i + 1)),
 });

@@ -6,16 +6,16 @@ const date = Variable('', {
 });
 
 function getDate(today: Date): string {
-  const year = today.getFullYear();
-  const month = today.getMonth() + 1;
-  const date = today.getDate();
-  return `${year}/${month}/${date}`;
+  const yyyy: string = String(today.getFullYear());
+  const mm: string = String(today.getMonth() + 1);
+  const dd: string = String(today.getDate());
+  return `${yyyy}/${mm}/${dd}`;
 }
 
 function getTime(today: Date): string {
-  const hourse = String(today.getHours()).padStart(2, '0');
-  const minutes = String(today.getMinutes()).padStart(2, '0');
-  return `${hourse}:${minutes}`;
+  const hh = String(today.getHours()).padStart(2, '0');
+  const mm = String(today.getMinutes()).padStart(2, '0');
+  return `${hh}:${mm}`;
 }
 
 export default () => Widget.Box({

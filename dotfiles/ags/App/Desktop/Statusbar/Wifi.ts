@@ -14,7 +14,7 @@ export default () => Symbol({
     .as((strength: number) => {
       if (Network.wifi.enabled) {
         return WifiIcons[
-          Math.floor(strength / (100 / (WifiIcons.length)))
+          Math.floor(strength / (100 / (WifiIcons.length - 1)))
         ]
       } else {
         switch (Network.wifi.internet) {

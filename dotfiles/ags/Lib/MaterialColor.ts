@@ -54,13 +54,6 @@ interface Colors {
   tertiary_fixed_variant: string;
 }
 
-interface Palette {
-  colors: {
-    dark: Colors;
-    light: Colors;
-  }
-}
-
 export enum PaletteTheme {
   Dark,
   Light,

@@ -2,7 +2,6 @@ import Gtk from 'gi://Gtk';
 import Gdk from 'gi://Gdk';
 import Cairo from 'gi://Cairo';
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
-import Utils from 'resource:///com/github/Aylur/ags/utils.js';
 
 const Lang = imports.lang;
 

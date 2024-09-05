@@ -35,11 +35,11 @@ function addMonitorPopupWindows(): void {
     App.addWindow(window());
 }
 
-function MonitorAdded(disp: object, monitor: number): void {
+function MonitorAdded(_: unknown, monitor: number): void {
   addMonitorDesktopWindows(monitor);
 }
 
-function MonitorRemoved(disp: object, monitor: number): void {
+function MonitorRemoved(_: unknown, monitor: number): void {
   for (const window of App.windows) {
     if (window.gdkmonitor === monitor)
       App.removeWindow(window);

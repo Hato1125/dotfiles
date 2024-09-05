@@ -1,3 +1,5 @@
+import Widget from 'resource:///com/github/Aylur/ags/widget.js';
+
 import Battery from '@Service/Battery';
 import Symbol from '@Lib/Symbol';
 
