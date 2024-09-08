@@ -2,11 +2,14 @@ import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 
 import Hyprland from '@Lib/Service/Hyprland';
 import Symbol from '@Lib/Symbol';
+import ButtonAnime from '@Lib/ButtonAnime';
 
 const MAX_WORKSPACE: number = 6;
 
 const WorkspaceButton = (workspaceId: number) => Widget.Button({
   setup: (self: Widget.Button) => self.hook(Hyprland.active.workspace, () => {
+    ButtonAnime(self);
+
     const isHightLight: boolean = workspaceId >= MAX_WORKSPACE
       ? MAX_WORKSPACE <= Hyprland.active.workspace.id
       : workspaceId === Hyprland.active.workspace.id;

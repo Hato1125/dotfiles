@@ -1,3 +1,7 @@
+* {
+  all: unset;
+}
+
 window {
   margin: 0;
   padding: 0;
@@ -16,13 +20,24 @@ button {
   background-image: none;
 }
 
-button:active {
+.fade-in {
   transition-duration: 0.3s, 0ms, 0.3s, 0.2s, 0.3s, 0.2s;
-  animation: ripple 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  transition-timing-function: cubic-bezier(0.000, 0.070, 0.045, 0.350);
+  animation: ripple 2.25s cubic-bezier(0.25, 1, 0.5, 1) forwards;
   background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: radial-gradient(circle, mix(@on-surface, @surface, 0.85) 50%, transparent 0%);
+  background-image: radial-gradient(circle, mix(@on-surface, rgba(0, 0, 0, 0), 0.9) 50%, transparent 0%);
+}
+
+.fade-out {
+  transition-duration: 0.3s, 0ms, 0.3s, 0.2s, 0.3s, 0.2s;
+  transition-timing-function: cubic-bezier(0.065, 1.025, 0.000, 0.885);
+  animation: ripple-out 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle, mix(@on-surface, rgba(0, 0, 0, 0), 0.9) 50%, transparent 0%);
 }
 
 label {
@@ -98,5 +113,16 @@ label {
   }
   to {
     background-size: 1000% 1000%;
+  }
+}
+
+@keyframes ripple-out {
+  from {
+    background-image: radial-gradient(circle, mix(@on-surface, rgba(0, 0, 0, 0), 0.9) 50%, transparent 0%);
+    background-size: 1000% 1000%;
+  }
+  to {
+    background-image: radial-gradient(circle, mix(@on-surface, rgba(0, 0, 0, 0), 1.0) 50%, transparent 0%);
+    background-size: 0% 0%;
   }
 }

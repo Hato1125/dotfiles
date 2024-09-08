@@ -51,7 +51,7 @@ const EndLayout = () => Widget.Box({
         Volume(),
         Battery(),
         Wifi()
-      ]
+      ],
     }),
     Date(),
   ]
