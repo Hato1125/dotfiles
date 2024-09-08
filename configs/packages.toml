@@ -1,3 +1,7 @@
+[ttf-google-sans]
+name = "ttf-google-sans"
+manager = "paru"
+
 [ttf-roboto]
 name = "ttf-roboto"
 manager = "paru"
