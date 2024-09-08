@@ -77,7 +77,7 @@ def create_symlink(src: pathlib.Path, dest: pathlib.Path):
   try:
     if os.path.exists(dest):
       shutil.rmtree(dest)
-      os.mkdir(dest)
+    os.mkdir(dest)
     for file in pathlib.Path(src).rglob('*'):
       src_path = file.absolute()
       dest_path = pathlib.Path(dest) / file.relative_to(src)
