@@ -1,8 +1,6 @@
 import Gtk from 'gi://Gtk';
 import App from 'resource:///com/github/Aylur/ags/app.js';
 
-import { Wallpaper } from '@Lib/Wallpaper';
-
 import Hyprland from "@Service/Hyprland";
 
 import {
@@ -47,8 +45,6 @@ function MonitorRemoved(_: unknown, monitor: number): void {
 }
 
 export default (): void => {
-  Wallpaper.SetWallpaper(Wallpaper.GetWallpaper());
-
   Hyprland.connect('monitor-added', MonitorAdded);
   Hyprland.connect('monitor-removed', MonitorRemoved);
 

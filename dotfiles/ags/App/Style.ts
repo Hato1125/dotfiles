@@ -3,27 +3,20 @@ import Gio from 'gi://Gio';
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import Utils from 'resource:///com/github/Aylur/ags/utils.js';
 
-import { Wallpaper } from '@Lib/Wallpaper';
-
-import {
-  PaletteTheme,
-  MaterialColor,
-} from '@Lib/MaterialColor';
-
 import {
   CSS_DIR,
   MAIN_CSS,
-  COLOR_CSS,
 } from '@Other/Path';
 
+import {
+  Theme,
+  ColorManager
+} from '@Lib/Color';
+
 export default (): void => {
-  Utils.writeFile(
-    MaterialColor.GetPaletteCss(
-      Wallpaper.GetWallpaper(),
-      PaletteTheme.Light
-    ),
-    COLOR_CSS
-  );
+  Utils.monitorFile(ColorManager.COLOR_CSS_PATH, () => {
+    App.applyCss(MAIN_CSS, true);
+  });
 
   const dir: GLib.File = Gio.File.new_for_path(CSS_DIR);
   const enu: GLib.FileEnumerator = dir.enumerate_children('standard::*', Gio.FileQueryInfoFlags.NONE, null);
