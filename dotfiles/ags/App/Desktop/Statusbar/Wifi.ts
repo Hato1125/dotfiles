@@ -12,18 +12,10 @@ const WifiIcons: string[] = [
 export default () => Symbol({
   label: Network.wifi.bind('strength')
     .as((strength: number) => {
-      if (Network.wifi.enabled) {
-        return WifiIcons[
-          Math.floor(strength / (100 / (WifiIcons.length - 1)))
-        ]
-      } else {
-        switch (Network.wifi.internet) {
-          case 'disconnected':
-          case 'connecting':
-            return 'signal_wifi_statusbar_null';
-          default:
-            return 'signal_wifi_off';
-        }
+      if (strength !== -1 && Network.wifi.enabled) {
+        const index = Math.floor(strength / (100 / (WifiIcons.length - 1)))
+        return WifiIcons[index];
       }
+      return 'signal_wifi_off';
     })
 });
