@@ -1,3 +1,15 @@
+[zsh]
+name = "zsh"
+manager = "paru"
+
+[hyprshot]
+name = "hyprshot"
+manager = "paru"
+
+[hyprpicker]
+name = "hyprpicker"
+manager = "paru"
+
 [ttf-google-sans]
 name = "ttf-google-sans"
 manager = "paru"
