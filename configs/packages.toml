@@ -1,6 +1,7 @@
 [zsh]
 name = "zsh"
 manager = "paru"
+command = "chsh -s /bin/zsh"
 
 [hyprshot]
 name = "hyprshot"

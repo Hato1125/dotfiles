@@ -68,6 +68,8 @@ def check_and_install_packages(packages: dict):
     try:
       if not package_check_install(package['manager'], package['name']):
         package_install(package['manager'], package['name'])
+        if 'command' in package:
+          subprocess.run([package['command']], shell=True)
     except ValueError as err:
       print_err(err)
     except Exception as err:
