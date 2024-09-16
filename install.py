@@ -75,7 +75,12 @@ def check_and_install_packages(packages: dict):
     except Exception as err:
       print_err(err)
 
-def create_symlink(src: pathlib.Path, dest: pathlib.Path):
+def create_file_symlik(src: pathlib.Path, dest: pathlib.Path):
+  if os.path.exists(dest):
+    os.remove(dest)
+  os.symlink(src, dest)
+
+def create_dire_symlink(src: pathlib.Path, dest: pathlib.Path):
   try:
     if os.path.exists(dest):
       shutil.rmtree(dest)
@@ -100,7 +105,13 @@ def create_dotfiles_symlinks(dotfiles: dict):
     dotfile = dotfiles[key]
     src = pathlib.Path('dotfiles') / pathlib.Path(dotfile['src'])
     dest = pathlib.Path(os.environ['HOME']) / pathlib.Path(dotfile['dest'])
-    create_symlink(src, dest)
+    if os.path.exists(src):
+      if os.path.isfile(src):
+        create_file_symlik(src, dest / pathlib.Path(dotfile['src']))
+      elif os.path.isdir(src):
+        create_dire_symlink(src, dest)
+      else:
+        raise ValueError(f"Invalid source path: {src}")
 
 if __name__ == '__main__':
   main()
