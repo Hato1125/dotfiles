@@ -9,3 +9,11 @@ dest = ".config/hypr"
 [nvim]
 src = "nvim"
 dest = ".config/nvim"
+
+[sheldon]
+src = "sheldon"
+dest = ".config/sheldon"
+
+[zshrc]
+src = ".zshrc"
+dest = ""

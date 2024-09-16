@@ -78,7 +78,7 @@ def check_and_install_packages(packages: dict):
 def create_file_symlik(src: pathlib.Path, dest: pathlib.Path):
   if os.path.exists(dest):
     os.remove(dest)
-  os.symlink(src, dest)
+  os.symlink(src.resolve(), dest)
 
 def create_dire_symlink(src: pathlib.Path, dest: pathlib.Path):
   try:
