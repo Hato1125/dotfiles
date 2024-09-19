@@ -2,7 +2,7 @@ import GLib from 'gi://GLib';
 import Utils from 'resource:///com/github/Aylur/ags/utils.js';
 import App from 'resource:///com/github/Aylur/ags/app.js';
 
-import { Info, Error } from '@Lib/Logger';
+import { Settings } from '@Lib/Setting';
 
 interface Color {
   colors: {
@@ -20,18 +20,7 @@ export class ColorManager {
   static readonly COLOR_JSON_DIRE = `${App.configDir}/Css`;
   static readonly COLOR_CSS_PATH = `${this.COLOR_JSON_DIRE}/color.css`;
 
-  static Init(image: string): void {
-    const color = this.theme === Theme.Dark
-      ? this.GenerateColor(image).colors.dark
-      : this.GenerateColor(image).colors.light;
-
-    Utils.writeFile(
-      this.ConvertCSS(color),
-      this.COLOR_CSS_PATH
-    );
-  }
-
-  static GenerateColor(image: string): Color {
+  static GenerateColorJson(image: string, theme: Theme): object {
     if (image === '')
       throw 'No wallpaper has been set.';
 
@@ -39,9 +28,14 @@ export class ColorManager {
       throw 'Wallpaper does not exist.';
 
     try {
-      return JSON.parse(
+      const colors = JSON.parse(
         Utils.exec(['matugen', '-j', 'hex', 'image', image])
       );
+
+      if(theme === Theme.Light)
+        return colors.colors.light;
+      else if(theme === Theme.Dark)
+        return colors.colors.dark;
     } catch (_) {
       throw 'Failed to generate color.';
     }
@@ -55,5 +49,9 @@ export class ColorManager {
       .join('\n');
   }
 
-  private static theme: Theme = Theme.Dark;
+  static GetTheme(): Theme {
+    return Settings.theme.theme.getValue() === 'dark'
+      ? Theme.Dark
+      : Theme.Light;
+  }
 }

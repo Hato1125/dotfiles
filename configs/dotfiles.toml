@@ -2,6 +2,10 @@
 src = "ags"
 dest = ".config/ags"
 
+[desktop]
+src = "desktop"
+dest = ".config/desktop"
+
 [hypr]
 src = "hypr"
 dest = ".config/hypr"

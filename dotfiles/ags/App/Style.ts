@@ -8,9 +8,8 @@ import {
   MAIN_CSS,
 } from '@Other/Path';
 
-import {
-  ColorManager
-} from '@Lib/Color';
+import { GetReadLink } from '@Lib/Utils';
+import { ColorManager } from '@Lib/Color';
 
 export default (): void => {
   Utils.monitorFile(ColorManager.COLOR_CSS_PATH, () => {
@@ -25,10 +24,7 @@ export default (): void => {
       break;
 
     if(info.get_name().endsWith('.css')) {
-      let filePath: string = `${CSS_DIR}/${info.get_name()}`;
-      if(GLib.file_test(filePath, GLib.FileTest.IS_SYMLINK))
-        filePath = GLib.file_read_link(filePath);
-
+      let filePath = GetReadLink(`${CSS_DIR}/${info.get_name()}`);
       Utils.monitorFile(filePath, () => {
         App.applyCss(MAIN_CSS, true);
       });

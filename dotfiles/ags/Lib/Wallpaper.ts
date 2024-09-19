@@ -3,6 +3,8 @@ import Utils from 'resource:///com/github/Aylur/ags/utils.js';
 
 import Hyprland from './Service/Hyprland';
 
+import { Settings } from './Setting';
+
 interface Monitor {
   id: number;
   name: string;
@@ -88,6 +90,15 @@ export class WallpaperManager {
     }
 
     this.QueryWallpaper();
+
+    this.transitionType = Settings.wallpaper.transition_type.getValue();
+    this.transitionStep = Settings.wallpaper.transition_step.getValue();
+    this.transitionDuration = Settings.wallpaper.transition_duration.getValue();
+    this.transitionFps = Settings.wallpaper.transition_fps.getValue();
+    this.transitionAngle = Settings.wallpaper.transition_angle.getValue();
+    this.transitionPos = Settings.wallpaper.transition_pos.getValue();
+    this.transitionBezier = Settings.wallpaper.transition_bezier.getValue();
+    this.transitionWave = Settings.wallpaper.transition_wave.getValue();
   }
 
   static Quit(): void {
@@ -99,16 +110,23 @@ export class WallpaperManager {
   }
 
   static SetWallpaper(image: string, monitorID: number = -1): void {
-    const monitor = Hyprland.monitors.find((monitor: Monitor) => {
-      return monitor.id === monitorID;
-    });
+    let outputMonitor: string[] = [];
 
-    if(!monitor)
-      throw 'The specified monitor was not found.';
+    if (monitorID !== -1) {
+      const monitor = Hyprland.monitors.find((monitor: Monitor) => {
+        return monitor.id === monitorID;
+      });
+
+      if (!monitor) {
+        throw 'The specified monitor was not found.';
+      }
+
+      outputMonitor = ['--outputs', monitor.name];
+    }
 
     Utils.exec([
       'swww', 'img', image,
-      '--outputs', monitor.name,
+      ...outputMonitor,
       '--transition-type', this.transitionType.toString(),
       '--transition-step', this.transitionStep.toString(),
       '--transition-duration', this.transitionDuration.toString(),

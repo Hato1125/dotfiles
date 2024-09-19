@@ -1,0 +1,17 @@
+{
+  "theme": {
+    "wallpaper": "/home/hato/neco.png",
+    "theme": "dark"
+  },
+  "wallpaper": {
+    "path": "/home/hato/neco.png",
+    "transition_type": "none",
+    "transition_step": 255,
+    "transition_duration": 0,
+    "transition_fps": 30,
+    "transition_angle": 0,
+    "transition_pos": "0, 0",
+    "transition_bezier": "0.54, 0.00, 0.34, 3.99",
+    "transition_wave": "0, 0"
+  }
+}
