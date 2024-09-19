@@ -1,9 +1,10 @@
-import Widget from 'resource:///com/github/Aylur/ags/widget.js';
-
 import Battery from '@Service/Battery';
-import Symbol from '@Lib/Symbol';
+import {
+  Symbol,
+  GetIcon,
+} from '@Lib/Symbol';
 
-const BatteryIcons: string[] = [
+const NORMAL_ICONS: string[] = [
   'battery_0_bar',
   'battery_1_bar',
   'battery_2_bar',
@@ -14,7 +15,7 @@ const BatteryIcons: string[] = [
   'battery_full',
 ];
 
-const BatteryChargingIcons: string[] = [
+const CHARGING_ICONS: string[] = [
   'battery_charging_full',
   'battery_charging_20',
   'battery_charging_30',
@@ -25,14 +26,13 @@ const BatteryChargingIcons: string[] = [
   'battery_full',
 ];
 
-const BatteryIcon = () => Symbol({
-  setup: (self: Widget.Label) => self.hook(Battery, () => {
-    const useIconSet: string[] = Battery.charging
-      ? BatteryChargingIcons
-      : BatteryIcons;
-    self.angle = 90;
-    self.label = useIconSet[Math.floor(Battery.percent / (100 / (useIconSet.length - 1)))];
-  })
+export default () => Symbol({
+  setup: (self: ReturnType<typeof Symbol>) =>
+    self.hook(Battery, () =>
+      self.label = GetIcon(
+        Battery.percent,
+        Battery.charging ? CHARGING_ICONS : NORMAL_ICONS
+      )
+    ),
+  angle: 90,
 });
-
-export default () => Battery.available ? BatteryIcon() : null;

@@ -1,7 +1,10 @@
 import Network from '@Service/Network';
-import Symbol from '@Lib/Symbol';
+import {
+  Symbol,
+  GetIcon,
+} from '@Lib/Symbol';
 
-const WifiIcons: string[] = [
+const WIFI_ICONS: string[] = [
   'signal_wifi_0_bar',
   'network_wifi_1_bar',
   'network_wifi_2_bar',
@@ -10,12 +13,10 @@ const WifiIcons: string[] = [
 ];
 
 export default () => Symbol({
-  label: Network.wifi.bind('strength')
-    .as((strength: number) => {
-      if (strength !== -1 && Network.wifi.enabled) {
-        const index = Math.floor(strength / (100 / (WifiIcons.length - 1)))
-        return WifiIcons[index];
-      }
-      return 'signal_wifi_off';
-    })
+  setup: (self: ReturnType<typeof Symbol>) =>
+    self.hook(Network, () =>
+      self.label = Network.wifi.enabled && Network.wifi.strength !== -1
+        ? GetIcon(Network.wifi.strength, WIFI_ICONS)
+        : 'signal_wifi_off'
+    )
 });

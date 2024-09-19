@@ -35,6 +35,7 @@
 
 .workspace .focused label {
   color: @on-primary;
+  font-feature-settings: "tnum";
 }
 
 .workspace .unfocused {
@@ -43,11 +44,13 @@
 
 .workspace .unfocused label {
   color: @on-surface;
+  font-feature-settings: "tnum";
 }
 
 .statusbar .dates label {
   font-size: 11.75px;
   letter-spacing: -1px;
+  font-feature-settings: "tnum";
 }
 
 .statusbar .layout {

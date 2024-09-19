@@ -7,7 +7,6 @@ import { ColorManager } from '@Lib/Color';
 import { WallpaperManager } from '@Lib/Wallpaper';
 import { DesktopManager } from '@Lib/Desktop';
 
-
 const DESKTOP_WINDOWS = [
   Statusbar,
   ...ScreenCorners,

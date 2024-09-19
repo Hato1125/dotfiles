@@ -8,6 +8,8 @@ import Battery from './Battery';
 import Wifi from './Wifi';
 import Date from './Date';
 
+import BatteryService from '@Service/Battery';
+
 // TODO: Make it possible to switch up and down in the future.
 enum StatusbarAnchor {
   Top,
@@ -49,7 +51,7 @@ const EndLayout = () => Widget.Box({
       children: [
         KeyLayout(),
         Volume(),
-        Battery(),
+        ...(BatteryService.available ? [Battery()] : []),
         Wifi()
       ],
     }),

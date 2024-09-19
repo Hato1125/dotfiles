@@ -1,60 +1,50 @@
 import Gtk from 'gi://Gtk';
-import Gdk from 'gi://Gdk';
 import Cairo from 'gi://Cairo';
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 
 const Lang = imports.lang;
 
-function DrawTopLeft(color: Gdk.RGBA, round: number, cr: Cairo.Context) {
+function DrawTopLeft(round: number, cr: Cairo.Context) {
   cr.arc(round, round, round, Math.PI, 3 * Math.PI / 2);
   cr.lineTo(0, 0);
-  cr.closePath();
-  cr.setSourceRGBA(color.red, color.green, color.blue, color.alpha);
-  cr.fill();
 }
 
-function DrawTopRight(color: Gdk.RGBA, round: number, cr: Cairo.Context) {
+function DrawTopRight(round: number, cr: Cairo.Context) {
   cr.arc(0, round, round, 3 * Math.PI / 2, 2 * Math.PI);
   cr.lineTo(round, 0);
-  cr.closePath();
-  cr.setSourceRGBA(color.red, color.green, color.blue, color.alpha);
-  cr.fill();
 }
 
-function DrawBottomLeft(color: Gdk.RGBA, round: number, cr: Cairo.Context) {
+function DrawBottomLeft(round: number, cr: Cairo.Context) {
   cr.arc(round, 0, round, Math.PI / 2, Math.PI);
   cr.lineTo(0, round);
-  cr.closePath();
-  cr.setSourceRGBA(color.red, color.green, color.blue, color.alpha);
-  cr.fill();
 }
 
-function DrawBottomRight(color: Gdk.RGBA, round: number, cr: Cairo.Context) {
+function DrawBottomRight(round: number, cr: Cairo.Context) {
   cr.arc(0, 0, round, 0, Math.PI / 2);
   cr.lineTo(round, round);
-  cr.closePath();
-  cr.setSourceRGBA(color.red, color.green, color.blue, color.alpha);
-  cr.fill();
 }
 
 const DrawingCorner = (
   name: string,
   vPack: string,
   hPack: string,
-  drawing: (color: Gdk.RGBA, round: number, cr: Cairo.Context) => void
+  drawing: (round: number, cr: Cairo.Context) => void
 ) => Widget.DrawingArea({
   class_name: name,
   vpack: vPack,
   hpack: hPack,
-  setup: (self: Widget.DrawingArea) => {
+  setup: (self: ReturnType<typeof Widget.DrawingArea>) => {
     const c = self.get_style_context().get_property('background-color', Gtk.StateFlags.NORMAL);
     const r = self.get_style_context().get_property('border-radius', Gtk.StateFlags.NORMAL);
     self.set_size_request(r, r);
-    self.connect('draw', Lang.bind(self, (_, cr: Cairo.Context) => {
+    self.connect('draw', Lang.bind(self, (_: unknown, cr: Cairo.Context) => {
       const c = self.get_style_context().get_property('background-color', Gtk.StateFlags.NORMAL);
       const r = self.get_style_context().get_property('border-radius', Gtk.StateFlags.NORMAL);
       self.set_size_request(r, r);
-      drawing(c, r, cr);
+      drawing(r, cr);
+      cr.closePath();
+      cr.setSourceRGBA(c.red, c.green, c.blue, c.alpha);
+      cr.fill();
     }));
   }
 });

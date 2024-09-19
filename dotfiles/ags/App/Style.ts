@@ -9,7 +9,6 @@ import {
 } from '@Other/Path';
 
 import {
-  Theme,
   ColorManager
 } from '@Lib/Color';
 
