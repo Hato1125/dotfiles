@@ -27,7 +27,7 @@ def main():
       dotfiles = tomllib.load(f)
       create_dotfiles_symlinks(dotfiles)
   except Exception as e:
-    print_err(f"An error occurred: {e}")
+    print_err(f'An error occurred: {e}')
 
   print_success('Dotfiles installed successfully!')
 
@@ -94,24 +94,24 @@ def create_dire_symlink(src: pathlib.Path, dest: pathlib.Path):
         else:
           os.symlink(src_path, dest_path)
   except PermissionError as e:
-    print_err(f"Permission error: {e}")
+    print_err(f'Permission error: {e}')
   except OSError as e:
-    print_err(f"Error handling file system: {e}")
+    print_err(f'Error handling file system: {e}')
   except Exception as e:
-    print_err(f"An unexpected error occurred: {e}")
+    print_err(f'An unexpected error occurred: {e}')
 
 def create_dotfiles_symlinks(dotfiles: dict):
   for key in dotfiles:
     dotfile = dotfiles[key]
     src = pathlib.Path('dotfiles') / pathlib.Path(dotfile['src'])
-    dest = pathlib.Path(os.environ['HOME']) / pathlib.Path(dotfile['dest'])
+    dest = pathlib.Path(dotfile['dest'].replace('~/', f'{os.environ['HOME']}/'))
     if os.path.exists(src):
       if os.path.isfile(src):
         create_file_symlik(src, dest / pathlib.Path(dotfile['src']))
       elif os.path.isdir(src):
         create_dire_symlink(src, dest)
       else:
-        raise ValueError(f"Invalid source path: {src}")
+        raise ValueError(f'Invalid source path: {src}')
 
 if __name__ == '__main__':
   main()

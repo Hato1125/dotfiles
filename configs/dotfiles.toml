@@ -1,23 +1,23 @@
 [ags]
 src = "ags"
-dest = ".config/ags"
+dest = "~/.config/ags"
 
 [desktop]
 src = "desktop"
-dest = ".config/desktop"
+dest = "~/.config/desktop"
 
 [hypr]
 src = "hypr"
-dest = ".config/hypr"
+dest = "~/.config/hypr"
 
 [nvim]
 src = "nvim"
-dest = ".config/nvim"
+dest = "~/.config/nvim"
 
 [sheldon]
 src = "sheldon"
-dest = ".config/sheldon"
+dest = "~/.config/sheldon"
 
 [zshrc]
 src = ".zshrc"
-dest = ""
+dest = "~/"
