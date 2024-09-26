@@ -21,3 +21,7 @@ dest = "~/.config/sheldon"
 [zshrc]
 src = ".zshrc"
 dest = "~/"
+
+[zprofile]
+src = ".zprofile"
+dest = "~/"
