@@ -1,8 +1,5 @@
 config-file = ?"~/.local/share/moca/scheme.conf"
 
-custom-shader = ~/.config/ghostty/shader.glsl
-custom-shader-animation = true
-
 shell-integration-features = no-cursor
 
 font-family = "Courier Prime"
@@ -42,7 +39,6 @@ link-url = true
 keybind = ctrl+n=new_tab
 keybind = ctrl+space=previous_tab
 
-#background-image = "/home/hato/Pictures/wallpaper/imgae/fraise2.png"
 background-image-opacity = 0.025
 background-image-fit = cover
 
