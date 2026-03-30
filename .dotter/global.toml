@@ -4,5 +4,8 @@
 [nvim.files]
 "nvim" = "~/.config/nvim"
 
+[hypr.files]
+"hypr" = "~/.config/hypr"
+
 [ghostty.files]
 "ghostty" = "~/.config/ghostty"
