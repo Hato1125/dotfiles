@@ -1,6 +1,7 @@
 [symlinks]
+".zprofile" = "/home/hato/.zprofile"
+".zshrc" = "/home/hato/.zshrc"
 "ghostty/config" = "/home/hato/.config/ghostty/config"
-"ghostty/shader.glsl" = "/home/hato/.config/ghostty/shader.glsl"
 "gtk-3.0/bookmarks" = "/home/hato/.config/gtk-3.0/bookmarks"
 "gtk-3.0/gtk.css" = "/home/hato/.config/gtk-3.0/gtk.css"
 "gtk-3.0/settings.ini" = "/home/hato/.config/gtk-3.0/settings.ini"

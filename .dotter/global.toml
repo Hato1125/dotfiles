@@ -13,8 +13,13 @@
 [uwsm.files]
 "uwsm" = "~/.config/uwsm"
 
+[zsh.files]
+".zshrc" = "~/.zshrc"
+".zprofile" = "~/.zprofile"
+
 [gtk3.files]
 "gtk-3.0" = "~/.config/gtk-3.0"
 
 [gtk4.files]
 "gtk-4.0" = "~/.config/gtk-4.0"
+
