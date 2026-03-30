@@ -1,0 +1,6 @@
+includes = [
+  "zed",
+  "nvim",
+  "hyprland",
+  "ghostty",
+]

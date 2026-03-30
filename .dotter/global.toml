@@ -1,0 +1,8 @@
+[zed.files]
+"zed" = "~/.config/zed"
+
+[nvim.files]
+"nvim" = "~/.config/nvim"
+
+[ghostty.files]
+"ghostty" = "~/.config/ghostty"
