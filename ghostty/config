@@ -1,0 +1,50 @@
+config-file = ?"~/.local/share/moca/scheme.conf"
+
+custom-shader = ~/.config/ghostty/shader.glsl
+custom-shader-animation = true
+
+shell-integration-features = no-cursor
+
+font-family = "Courier Prime"
+font-variation = wght=1000
+font-variation-bold = wght=1000
+font-size = 9.5
+font-style = "Semibold"
+font-style-bold = "Bold"
+font-style-italic = "Semibold Italic"
+font-style-bold-italic = "Bold Italic"
+
+window-decoration = true
+window-padding-color = extend
+window-padding-x = 10
+window-padding-y = 10
+
+adjust-underline-position = 30%
+adjust-underline-thickness = 20%
+
+adjust-cell-height = 13%
+adjust-cell-width = 0%
+
+cursor-style = block
+cursor-invert-fg-bg = true
+
+gtk-tabs-location = top
+gtk-toolbar-style = flat
+
+mouse-hide-while-typing = true
+mouse-shift-capture = true
+
+selection-foreground = #000000
+selection-background = #ffffff
+
+link-url = true
+
+keybind = ctrl+n=new_tab
+keybind = ctrl+space=previous_tab
+
+#background-image = "/home/hato/Pictures/wallpaper/imgae/fraise2.png"
+background-image-opacity = 0.025
+background-image-fit = cover
+
+background = #000000
+foreground = #ffffff
