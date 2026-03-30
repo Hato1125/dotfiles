@@ -3,4 +3,6 @@ packages = [
   "nvim",
   "hypr",
   "ghostty",
+  "gtk3",
+  "gtk4",
 ]

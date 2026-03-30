@@ -1,0 +1,97 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --shade-color: rgba(0, 0, 0, 0.325);
+
+    --window-bg-color: black;
+    --window-fg-color: white;
+
+    --view-bg-color: black;
+    --view-fg-color: white;
+
+    --headerbar-bg-color: black;
+    --headerbar-fg-color: white;
+    --headerbar-shade-color: rgba(255, 255, 255, 0.1);
+    --headerbar-darker-shade-color: rgba(255, 255, 255, 0.15);
+
+    --popover-bg-color: black;
+    --popover-fg-color: white;
+
+    --dialog-bg-color: black;
+    --dialog-fg-color: white;
+
+    --sidebar-bg-color: black;
+    --sidebar-fg-color: white;
+    --sidebar-backdrop-color: black;
+    --sidebar-shade-color: rgba(0, 0, 0, 0.25);
+    --sidebar-border-color: rgba(0, 0, 0, 0.36);
+
+    --tab-bg-color: black;
+    --tab-fg-color: white;
+  }
+
+  popover > contents {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  popover > arrow {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  stackswitcher button:checked {
+    background-color: rgba(255, 255, 255, 0.145);
+    color: white;
+  }
+
+  stackswitcher button {
+    color: white;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --shade-color: rgba(0, 0, 0, 0.325);
+
+    --window-bg-color: white;
+    --window-fg-color: black;
+
+    --view-bg-color: white;
+    --view-fg-color: black;
+
+    --headerbar-bg-color: white;
+    --headerbar-fg-color: black;
+    --headerbar-shade-color: rgba(0, 0, 0, 0.1);
+    --headerbar-darker-shade-color: rgba(0, 0, 0, 0.15);
+
+    --popover-bg-color: white;
+    --popover-fg-color: black;
+
+    --dialog-bg-color: white;
+    --dialog-fg-color: black;
+
+    --sidebar-bg-color: white;
+    --sidebar-fg-color: black;
+    --sidebar-backdrop-color: white;
+    --sidebar-shade-color: rgba(255, 255, 255, 0.25);
+    --sidebar-border-color: rgba(255, 255, 255, 0.36);
+
+    --tab-bg-color: white;
+    --tab-fg-color: black;
+  }
+
+  popover > contents {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+  }
+
+  popover > arrow {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+  }
+
+  stackswitcher button:checked {
+    background-color: rgba(0, 0, 0, 0.145);
+    color: black;
+  }
+
+  stackswitcher button {
+    color: black;
+  }
+}

@@ -1,0 +1,27 @@
+@define-color window_bg_color black;
+@define-color window_fg_color white;
+
+@define-color view_bg_color black;
+@define-color view_fg_color white;
+
+@define-color headerbar_bg_color black;
+@define-color headerbar_fg_color white;
+
+@define-color popover_bg_color black;
+@define-color popover_fg_color white;
+
+@define-color dialog_bg_color black;
+@define-color dialog_fg_color white;
+
+@define-color sidebar_bg_color black;
+@define-color sidebar_fg_color white;
+@define-color sidebar_backdrop_color black;
+
+stackswitcher button:checked {
+  background-color: rgba(255, 255, 255, 0.145);
+  color: white;
+}
+
+stackswitcher button {
+  color: white;
+}
