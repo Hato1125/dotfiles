@@ -10,6 +10,9 @@
 [ghostty.files]
 "ghostty" = "~/.config/ghostty"
 
+[uwsm.files]
+"uwsm" = "~/.config/uwsm"
+
 [gtk3.files]
 "gtk-3.0" = "~/.config/gtk-3.0"
 
