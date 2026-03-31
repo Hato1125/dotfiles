@@ -4,6 +4,7 @@ packages = [
   "hypr",
   "ghostty",
   "uwsm",
+  "starship",
   "zsh",
   "gtk3",
   "gtk4",

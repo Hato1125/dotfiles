@@ -18,6 +18,7 @@
 "nvim/lua/plugins/editor.lua" = "/home/hato/.config/nvim/lua/plugins/editor.lua"
 "nvim/lua/plugins/lsp.lua" = "/home/hato/.config/nvim/lua/plugins/lsp.lua"
 "nvim/lua/plugins/ui.lua" = "/home/hato/.config/nvim/lua/plugins/ui.lua"
+"starship/starship.toml" = "/home/hato/.config/starship/starship.toml"
 "uwsm/default-id" = "/home/hato/.config/uwsm/default-id"
 "uwsm/env" = "/home/hato/.config/uwsm/env"
 "uwsm/env-hyprland" = "/home/hato/.config/uwsm/env-hyprland"

@@ -13,6 +13,9 @@
 [uwsm.files]
 "uwsm" = "~/.config/uwsm"
 
+[starship.files]
+"starship" = "~/.config/starship"
+
 [zsh.files]
 ".zshrc" = "~/.zshrc"
 ".zprofile" = "~/.zprofile"
