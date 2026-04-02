@@ -8,7 +8,7 @@ return {
         'LazyVim',
         { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
         { path = 'LazyVim', words = { 'LazyVim' } },
-        { path = 'xmake-luals-addon/library', files = { 'xmake.lua' } },
+        { path = 'xmake-luals-addon/library', words = { 'xmake' } },
       },
     },
   },
