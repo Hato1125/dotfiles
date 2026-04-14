@@ -2,7 +2,7 @@ config-file = ?"~/.local/share/moca/scheme.conf"
 
 shell-integration-features = no-cursor
 
-font-family = "Courier Prime"
+font-family = "Monaspace Radon Var"
 font-variation = wght=1000
 font-variation-bold = wght=1000
 font-size = 9.5
@@ -19,8 +19,8 @@ window-padding-y = 10
 adjust-underline-position = 30%
 adjust-underline-thickness = 20%
 
-adjust-cell-height = 13%
-adjust-cell-width = 0%
+adjust-cell-height = 4%
+adjust-cell-width = 3.5%
 
 cursor-style = block
 cursor-invert-fg-bg = true
