@@ -142,8 +142,8 @@ return {
     },
     lazy = true,
     keys = {
-      { '<leader>ff', require('telescope.builtin').find_files },
-      { '<leader>fg', require('telescope.builtin').live_grep },
+      { '<leader>ff', function() require('telescope.builtin').find_files() end },
+      { '<leader>fg', function() require('telescope.builtin').live_grep() end },
     }
   }
 }
