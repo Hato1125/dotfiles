@@ -2,14 +2,12 @@ config-file = ?"~/.local/share/moca/scheme.conf"
 
 shell-integration-features = no-cursor
 
-font-family = "Monaspace Radon Var"
+font-family = "Comic Mono"
 font-variation = wght=1000
 font-variation-bold = wght=1000
 font-size = 9.5
-font-style = "Semibold"
-font-style-bold = "Bold"
-font-style-italic = "Semibold Italic"
-font-style-bold-italic = "Bold Italic"
+font-style = "Bold"
+font-style-italic = "Bold Italic"
 
 window-decoration = true
 window-padding-color = extend
@@ -19,7 +17,7 @@ window-padding-y = 10
 adjust-underline-position = 30%
 adjust-underline-thickness = 20%
 
-adjust-cell-height = 4%
+adjust-cell-height = 7.25%
 adjust-cell-width = 3.5%
 
 cursor-style = block
