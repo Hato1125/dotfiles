@@ -1,4 +1,16 @@
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "agent_servers": {
     "claude-acp": {
       "type": "registry"
@@ -22,16 +34,14 @@
   "format_on_save": "off",
   "lsp_highlight_debounce": 50,
   "agent": {
+    "dock": "right",
     "use_modifier_to_send": true,
     "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
       "model": "gemini-3-pro-preview"
     },
-    "play_sound_when_agent_done": true
-  },
-  "notification_panel": {
-    "button": false
+    "play_sound_when_agent_done": "always"
   },
   "tab_bar": {
     "show": true,
@@ -62,7 +72,7 @@
     "dark": "GitHub Pitch Dark"
   },
   "terminal": {
-    "button": false,
+    "button": true,
     "font_family": "Comic Mono",
     "font_size": 12,
     "font_weight": 600,
