@@ -7,6 +7,7 @@ export XDG_DOCUMENTS_DIR="$HOME/Documents"
 export XDG_MUSIC_DIR="$HOME/Music"
 export XDG_PICTURES_DIR="$HOME/Pictures"
 export XDG_VIDEOS_DIR="$HOME/Videos"
+export XDG_PROJECTS_DIR="$HOME/Projects"
 
 if [ "$(tty)" = "/dev/tty1" ] && uwsm check may-start && uwsm select; then
   exec uwsm start default
