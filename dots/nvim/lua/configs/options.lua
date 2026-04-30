@@ -27,5 +27,9 @@ vim.opt.scrolloff = 10
 vim.opt.showmode = false
 vim.opt.termguicolors = true
 vim.opt.list = true
-vim.opt.listchars = { trail = '.' }
+vim.opt.listchars = {
+  trail = '.',
+  tab = '  ',
+  nbsp = '␣',
+}
 vim.opt.clipboard = 'unnamedplus'
