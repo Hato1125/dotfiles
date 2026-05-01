@@ -117,7 +117,7 @@ return {
           extensions = {},
         },
         sections = {
-          lualine_c = {},
+          lualine_c = { 'filename' },
           lualine_x = {},
         },
         winbar = {},

@@ -23,6 +23,7 @@ vim.opt.autoindent = false
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
+
 vim.opt.scrolloff = 10
 vim.opt.showmode = false
 vim.opt.termguicolors = true
