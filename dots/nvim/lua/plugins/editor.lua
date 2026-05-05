@@ -3,7 +3,6 @@ return {
     'nvim-treesitter/nvim-treesitter',
     branch = 'master',
     build = ':TSUpdate',
-    lazy = true,
     event = {
       'BufReadPre',
       'BufNewFile',
@@ -29,7 +28,6 @@ return {
   },
   {
     'hrsh7th/nvim-cmp',
-    lazy = true,
     event = {
       'InsertEnter',
       'CmdlineEnter',
@@ -62,7 +60,6 @@ return {
   {
     'lukas-reineke/indent-blankline.nvim',
     main = 'ibl',
-    lazy = true,
     event = {
       'BufReadPre',
       'BufNewFile',
@@ -77,7 +74,7 @@ return {
       hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
         vim.api.nvim_set_hl(0, 'IblScope', { fg = '#D29922' })
       end)
-      
+
       require('ibl').setup({
         indent = {
           char = '▏',
@@ -101,7 +98,6 @@ return {
         split_side = 'right',
       },
     },
-    lazy = true,
     keys = {
       { '<leader>ac', '<cmd>ClaudeCode<cr>', desc = 'Toggle Claude' },
       { '<leader>af', '<cmd>ClaudeCodeFocus<cr>', desc = 'Focus Claude' },
@@ -118,8 +114,7 @@ return {
   {
     'Mythos-404/xmake.nvim',
     version = '^3',
-    lazy = true,
-    event = "BufReadPost",
+    event = 'BufReadPost',
     config = true,
     opts = {
       on_save = {

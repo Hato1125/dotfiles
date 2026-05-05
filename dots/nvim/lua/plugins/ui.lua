@@ -46,7 +46,6 @@ return {
           'NeoTreeEndOfBuffer',
           'NeoTreeRootName',
           'NeoTreeSymbolicLinkTarget',
-          'NeoTreeTitleBar',
           'NeoTreeWindowsHidden',
         },
       }
@@ -84,7 +83,11 @@ return {
     config = function()
       require('lualine').setup {
         options = {
-          disabled_filetypes = { 'alpha', 'neo-tree', 'snacks_terminal' },
+          disabled_filetypes = {
+            'alpha',
+            'neo-tree',
+            'snacks_terminal',
+          },
           theme = {
             normal = {
               a = { fg = '#000000', bg = '#ffffff', gui = 'bold' },

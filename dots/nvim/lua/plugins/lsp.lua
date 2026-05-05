@@ -20,7 +20,6 @@ return {
       'hrsh7th/cmp-nvim-lsp',
       'folke/lazydev.nvim',
     },
-    lazy = true,
     event = {
       'BufReadPre',
       'BufNewFile',
