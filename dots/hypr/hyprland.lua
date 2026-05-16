@@ -43,8 +43,8 @@ hl.config({
     enabled = true
   },
   misc = {
-    disable_hyprland_logo = false,
-    disable_splash_rendering = false,
+    disable_hyprland_logo = true,
+    disable_splash_rendering = true,
     animate_manual_resizes = false,
     enable_anr_dialog = false,
     enable_swallow = false,
