@@ -1,73 +1,5 @@
 return {
   {
-    'projekt0n/github-nvim-theme',
-  },
-  {
-    'xiyaowong/transparent.nvim',
-    config = function()
-      vim.cmd('colorscheme github_dark')
-
-      require('transparent').setup {
-        extra_groups = {
-          'NormalFloat',
-          'WinSeparator',
-          'StatusLine',
-          'StatusLineNC',
-          'NeoTreeCursorLine',
-          'NeoTreeDimText',
-          'NeoTreeDirectoryIcon',
-          'NeoTreeDirectoryName',
-          'NeoTreeDotfile',
-          'NeoTreeFileIcon',
-          'NeoTreeFileName',
-          'NeoTreeFileNameOpene',
-          'NeoTreeFilterTerm',
-          'NeoTreeFloatBorder',
-          'NeoTreeFloatTitle',
-          'NeoTreeTitleBar',
-          'NeoTreeGitAdded',
-          'NeoTreeGitConflict',
-          'NeoTreeGitDeleted',
-          'NeoTreeGitIgnored',
-          'NeoTreeGitModified',
-          'NeoTreeGitUnstaged',
-          'NeoTreeGitUntracke',
-          'NeoTreeGitStaged',
-          'NeoTreeHiddenByName',
-          'NeoTreeIndentMarker',
-          'NeoTreeExpander',
-          'NeoTreeNormal',
-          'NeoTreeNormalNC',
-          'NeoTreeSignColumn',
-          'NeoTreeStatusLine',
-          'NeoTreeStatusLineNC',
-          'NeoTreeVertSplit',
-          'NeoTreeWinSeparator',
-          'NeoTreeEndOfBuffer',
-          'NeoTreeRootName',
-          'NeoTreeSymbolicLinkTarget',
-          'NeoTreeWindowsHidden',
-        },
-      }
-
-      vim.api.nvim_create_autocmd("ColorScheme", {
-        callback = function()
-          vim.cmd([[
-            highlight NeoTreeNormal guibg=NONE ctermbg=NONE
-            highlight NeoTreeNormalNC guibg=NONE ctermbg=NONE
-            highlight NeoTreeEndOfBuffer guibg=NONE ctermbg=NONE
-            highlight NeoTreeWinSeparator guibg=NONE ctermbg=NONE
-            highlight FloatBorder guifg=#FFFFFF guibg=NONE
-            highlight WinSeparator guifg=#FFFFFF guibg=NONE
-            highlight VertSplit guifg=#FFFFFF guibg=NONE
-          ]])
-        end,
-      })
-
-      vim.cmd('TransparentEnable')
-    end
-  },
-  {
     'nvim-neo-tree/neo-tree.nvim',
     dependencies = {
       'nvim-lua/plenary.nvim',
@@ -80,6 +12,7 @@ return {
   },
   {
     'nvim-lualine/lualine.nvim',
+    event = 'VeryLazy',
     config = function()
       require('lualine').setup {
         options = {
