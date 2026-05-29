@@ -1,5 +1,6 @@
 export PATH="$HOME/.local/bin:$PATH"
 
+export MOZ_LEGACY_PROFILES=0
 export EDITOR="nvim"
 export BROWSER="zen-browser"
 
