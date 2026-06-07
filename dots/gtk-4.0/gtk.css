@@ -10,6 +10,7 @@
 
     --headerbar-bg-color: black;
     --headerbar-fg-color: white;
+    --headerbar-backdrop-color: black;
     --headerbar-shade-color: rgba(255, 255, 255, 0.1);
     --headerbar-darker-shade-color: rgba(255, 255, 255, 0.15);
 
@@ -44,6 +45,17 @@
 
   stackswitcher button {
     color: white;
+  }
+
+  window:backdrop headerbar,
+  window:backdrop headerbar windowhandle,
+  window:backdrop headerbar windowhandle > box,
+  headerbar:backdrop,
+  headerbar:backdrop windowhandle,
+  headerbar:backdrop windowhandle > box {
+    background: black;
+    background-color: black;
+    background-image: none;
   }
 }
 

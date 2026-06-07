@@ -6,6 +6,7 @@
 
 @define-color headerbar_bg_color black;
 @define-color headerbar_fg_color white;
+@define-color headerbar_backdrop_color black;
 
 @define-color popover_bg_color black;
 @define-color popover_fg_color white;
@@ -17,6 +18,8 @@
 @define-color sidebar_fg_color white;
 @define-color sidebar_backdrop_color black;
 
+@define-color theme_unfocused_bg_color black;
+
 stackswitcher button:checked {
   background-color: rgba(255, 255, 255, 0.145);
   color: white;
@@ -24,4 +27,11 @@ stackswitcher button:checked {
 
 stackswitcher button {
   color: white;
+}
+
+headerbar:backdrop,
+.titlebar:backdrop:not(headerbar),
+windowhandle:backdrop {
+  background-color: black;
+  background-image: none;
 }
