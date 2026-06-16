@@ -48,6 +48,7 @@ hl.config({
     animate_manual_resizes = false,
     enable_anr_dialog = false,
     enable_swallow = false,
+    vrr = 2,
     background_color = 0x00000000,
   },
   xwayland = {

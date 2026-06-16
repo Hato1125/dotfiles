@@ -1,6 +1,19 @@
 {
+  "diagnostics": {
+    "button": true
+  },
+  "status_bar": {
+    "show_active_file": false,
+    "cursor_position_button": true,
+    "active_language_button": true
+  },
   "cli_default_open_behavior": "existing_window",
   "project_panel": {
+    "hide_root": true,
+    "git_status_indicator": false,
+    "bold_folder_labels": true,
+    "hide_gitignore": false,
+    "button": true,
     "dock": "left"
   },
   "outline_panel": {
@@ -14,9 +27,17 @@
   },
   "agent_servers": {
     "codex-acp": {
+      "default_config_options": {
+        "reasoning_effort": "high",
+        "model": "gpt-5.5"
+      },
       "type": "registry"
     },
     "claude-acp": {
+      "default_config_options": {
+        "effort": "medium",
+        "model": "sonnet[1m]"
+      },
       "type": "registry"
     }
   },
@@ -26,12 +47,16 @@
   "autosave": "on_focus_change",
   "restore_on_startup": "last_workspace",
   "buffer_font_family": "Comic Mono",
+  //"buffer_font_family": "IoskeleyMonoTerm Nerd Font",
+  //"buffer_font_size": 12.5,
   "buffer_font_size": 13.0,
+  //"buffer_font_weight": 500.0,
   "buffer_font_weight": 700.0,
   "buffer_line_height": {
     "custom": 1.2
   },
   "ui_font_family": "Comic Mono",
+  //"ui_font_family": "IoskeleyMonoTerm Nerd Font",
   "ui_font_size": 14,
   "ui_font_weight": 600,
   "tab_size": 2,
@@ -48,11 +73,13 @@
     "play_sound_when_agent_done": "always"
   },
   "tab_bar": {
+    "show_pinned_tabs_in_separate_row": false,
     "show": true,
     "show_nav_history_buttons": false,
     "show_tab_bar_buttons": false
   },
   "toolbar": {
+    "code_actions": false,
     "breadcrumbs": false,
     "quick_actions": false
   },
@@ -61,6 +88,7 @@
     "metrics": false
   },
   "tabs": {
+    "git_status": false,
     "file_icons": true
   },
   "git": {
@@ -76,10 +104,12 @@
     "dark": "GitHub Pitch Dark"
   },
   "terminal": {
+    "show_count_badge": false,
     "button": true,
     "font_family": "Comic Mono",
+    //"font_family": "IoskeleyMonoTerm Nerd Font",
     "font_size": 12,
-    "font_weight": 600,
+    "font_weight": 500.0,
     "line_height": "standard",
     "toolbar": {
       "breadcrumbs": false
