@@ -1,7 +1,6 @@
-export CURSOR_THEME=Bibata-Modern-Classic
-
 export XCURSOR_SIZE=32
-export XCURSOR_THEME=$CURSOR_THEME
+export XCURSOR_THEME=zhao-x
+export XCURSOR_PATH="$HOME/.local/share/icons:$HOME/.icons:/usr/share/icons:/usr/share/pixmaps"
 
 export XDG_CURRENT_DESKTOP=Hyprland
 export XDG_SESSION_TYPE=wayland
@@ -14,5 +13,5 @@ export HYPRLAND_NO_RT=0
 export HYPRLAND_NO_SD_NOTIFY=1
 
 export HYPRCURSOR_SIZE=32
-export HYPRCURSOR_THEME=$CURSOR_THEME
+export HYPRCURSOR_THEME=zhao
 export HYPRSHOT_DIR="$XDG_PICTURES_DIR/screenshots"
