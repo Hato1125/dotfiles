@@ -9,6 +9,13 @@ return {
     keys = {
       { '<leader>fb', '<cmd>Neotree left selector=false<CR>' },
     },
+    config = function()
+      require('neo-tree').setup({
+        filesystem = {
+          use_libuv_file_watcher = true,
+        },
+      })
+    end,
   },
   {
     'nvim-lualine/lualine.nvim',

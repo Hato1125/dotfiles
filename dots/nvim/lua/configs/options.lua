@@ -1,5 +1,6 @@
 vim.opt.fileencoding = 'utf-8'
 vim.opt.fillchars = 'eob: '
+vim.opt.autoread = true
 vim.opt.swapfile = false
 vim.opt.wrap = false
 vim.opt.number = true
@@ -12,6 +13,7 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 
 vim.opt.scrolloff = 10
+vim.opt.updatetime = 250
 vim.opt.showmode = false
 vim.opt.termguicolors = true
 vim.opt.list = true
@@ -21,3 +23,19 @@ vim.opt.listchars = {
   nbsp = '␣',
 }
 vim.opt.clipboard = 'unnamedplus'
+
+vim.api.nvim_create_autocmd({
+  'BufEnter',
+  'CursorHold',
+  'CursorHoldI',
+  'FocusGained',
+  'TermClose',
+  'TermLeave',
+}, {
+  group = vim.api.nvim_create_augroup('AutoReloadExternalChanges', { clear = true }),
+  callback = function()
+    if vim.fn.mode() ~= 'c' then
+      vim.cmd('silent! checktime')
+    end
+  end,
+})
