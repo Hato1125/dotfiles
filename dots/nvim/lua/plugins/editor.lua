@@ -1,29 +1,51 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    branch = 'master',
+    branch = 'main',
     build = ':TSUpdate',
     event = {
       'BufReadPre',
       'BufNewFile',
     },
     config = function()
-      require('nvim-treesitter.configs').setup {
-        ensure_installed = {
-          'c',
-          'cpp',
-          'cmake',
-          'json',
-          'lua',
-          'rust',
-          'zig'
-        },
-        sync_install = false,
-        auto_install = true,
-        highlight = {
-          enable = true
-        }
+      require('nvim-treesitter').install({
+        'bash',
+        'markdown',
+        'kotlin',
+        'c',
+        'cpp',
+        'rust',
+        'glsl',
+        'cmake',
+        'css',
+        'html',
+        'javascript',
+        'typescript',
+        'dart',
+        'json',
+        'toml',
+        'xml',
+        'dockerfile',
+        'doxygen',
+        'angular',
+        'python',
+        'lua',
+        'gitignore',
+        'gitcommit',
+        'gitattributes',
+      },
+      {
+        force = false,
+        generate = true,
+        max_jobs = 8,
       }
+    )
+
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function(ev)
+          pcall(vim.treesitter.start, ev.buf)
+        end,
+      })
     end
   },
   {
