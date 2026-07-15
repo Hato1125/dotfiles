@@ -27,35 +27,38 @@ return {
     end
   },
   {
-    'hrsh7th/nvim-cmp',
-    event = {
-      'InsertEnter',
-      'CmdlineEnter',
+    'saghen/blink.cmp',
+    dependencies = {
+      'saghen/blink.lib',
+      'rafamadriz/friendly-snippets',
     },
-    config = function()
-      local cmp = require('cmp')
-
-      cmp.setup {
-        window = {
-          completion = cmp.config.window.bordered({
-            border = 'rounded',
-          }),
-          documentation = cmp.config.window.bordered({
-            border = 'rounded',
-          }),
+    build = function()
+      require('blink.cmp').build():pwait()
+    end,
+    opts = {
+      keymap = {
+        preset = 'default',
+        ['<Tab>'] = { 'select_and_accept', 'fallback' },
+        ['<Down>'] = { 'select_next', 'fallback' },
+        ['<Up>'] = { 'select_prev', 'fallback' },
+      },
+      completion = {
+        documentation = {
+          auto_show = false
         },
-        mapping = cmp.mapping.preset.insert({
-          ['<Tab>'] = cmp.mapping.confirm({ select = true }),
-          ['<Down>'] = cmp.mapping.select_next_item(),
-          ['<Up>'] = cmp.mapping.select_prev_item(),
-        }),
-        sources = cmp.config.sources({
-          { name = 'nvim_lsp' },
-        }, {
-          { name = 'buffer' },
-        }),
-      }
-    end
+      },
+      sources = {
+        default = {
+          'lsp',
+          'path',
+          'snippets',
+          'buffer'
+        },
+      },
+      fuzzy = {
+        implementation = 'rust',
+      },
+    },
   },
   {
     'lukas-reineke/indent-blankline.nvim',

@@ -17,7 +17,7 @@ return {
     dependencies = {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
-      'hrsh7th/cmp-nvim-lsp',
+      'saghen/blink.cmp',
       'folke/lazydev.nvim',
     },
     event = {
@@ -46,7 +46,7 @@ return {
 
       local lspconfig = require('lspconfig')
       local mason_lspconfig = require('mason-lspconfig')
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
 
       mason_lspconfig.setup {
         ensure_installed = {
