@@ -25,6 +25,17 @@ return {
       'BufNewFile',
     },
     opts = {
+      servers = {
+        clangd = {
+          cmd = {
+            'clangd',
+            '--background-index',
+            '--clang-tidy',
+            '--header-insertion=iwyu',
+            '--completion-style=detailed',
+          },
+        },
+      },
     },
     config = function(_, opts)
       require('mason').setup {
