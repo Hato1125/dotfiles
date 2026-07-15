@@ -1,5 +1,9 @@
 return {
   {
+    'LelouchHe/xmake-luals-addon',
+    lazy = true,
+  },
+  {
     'folke/lazydev.nvim',
     ft = 'lua',
     opts = {
@@ -35,6 +39,11 @@ return {
             '--completion-style=detailed',
           },
         },
+        ruff = {
+          on_attach = function(client)
+            client.server_capabilities.hoverProvider = false
+          end,
+        },
       },
     },
     config = function(_, opts)
@@ -52,16 +61,22 @@ return {
         ensure_installed = {
           'lua_ls',
           'ts_ls',
+          'angularls',
           'bacon_ls',
+          'rust_analyzer',
           'bashls',
           'tombi',
           'yamlls',
           'clangd',
-          'cmake',
+          'neocmake',
           'cssls',
           'html',
           'biome',
           'intelephense',
+          'basedpyright',
+          'ruff',
+          'dockerls',
+          'glsl_analyzer',
         },
         handlers = {
           function(name)
