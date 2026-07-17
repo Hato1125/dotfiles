@@ -54,6 +54,44 @@ return {
       'saghen/blink.lib',
       'rafamadriz/friendly-snippets',
     },
+    init = function()
+      local function set_border_background()
+        local normal = vim.api.nvim_get_hl(0, { name = 'Normal', link = false })
+        local border = vim.api.nvim_get_hl(0, { name = 'FloatBorder', link = false })
+        local background = normal.bg or 'NONE'
+        local border_highlight = {
+          fg = border.fg,
+          bg = background,
+        }
+
+        for _, group in ipairs({
+          'BlinkCmpMenuBorder',
+          'BlinkCmpDocBorder',
+          'BlinkCmpSignatureHelpBorder',
+        }) do
+          vim.api.nvim_set_hl(0, group, border_highlight)
+        end
+
+        for group, source in pairs({
+          BlinkCmpMenu = 'Pmenu',
+          BlinkCmpDoc = 'NormalFloat',
+          BlinkCmpDocSeparator = 'NormalFloat',
+          BlinkCmpSignatureHelp = 'NormalFloat',
+        }) do
+          local source_highlight = vim.api.nvim_get_hl(0, { name = source, link = false })
+          vim.api.nvim_set_hl(0, group, {
+            fg = source_highlight.fg or normal.fg,
+            bg = background,
+          })
+        end
+      end
+
+      vim.api.nvim_create_autocmd('ColorScheme', {
+        group = vim.api.nvim_create_augroup('BlinkCmpBorderBackground', { clear = true }),
+        callback = set_border_background,
+      })
+      set_border_background()
+    end,
     build = function()
       require('blink.cmp').build():pwait()
     end,
@@ -65,8 +103,14 @@ return {
         ['<Up>'] = { 'select_prev', 'fallback' },
       },
       completion = {
+        menu = {
+          border = 'rounded',
+        },
         documentation = {
-          auto_show = false
+          auto_show = false,
+          window = {
+            border = 'rounded',
+          },
         },
       },
       sources = {

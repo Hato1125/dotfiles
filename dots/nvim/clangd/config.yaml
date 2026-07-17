@@ -1,0 +1,11 @@
+Diagnostics:
+  ClangTidy:
+    Add:
+      - clang-analyzer-*
+      - bugprone-use-after-move
+      - performance-move-const-arg
+      - performance-unnecessary-copy-initialization
+      - modernize-use-override
+      - misc-override-with-different-visibility
+      - cppcoreguidelines-pro-type-member-init
+    FastCheckFilter: Loose

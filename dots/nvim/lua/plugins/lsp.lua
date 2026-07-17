@@ -17,12 +17,28 @@ return {
     },
   },
   {
+    'https://git.sr.ht/~p00f/clangd_extensions.nvim',
+    ft = {
+      'c',
+      'cpp',
+    },
+    opts = {},
+    keys = {
+      {
+        '<leader>ch',
+        '<cmd>ClangdTypeHierarchy<CR>',
+        desc = 'Show C/C++ type hierarchy',
+      },
+    },
+  },
+  {
     'neovim/nvim-lspconfig',
     dependencies = {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       'saghen/blink.cmp',
       'folke/lazydev.nvim',
+      'MunifTanjim/nui.nvim',
     },
     event = {
       'BufReadPre',
@@ -37,6 +53,9 @@ return {
             '--clang-tidy',
             '--header-insertion=iwyu',
             '--completion-style=detailed',
+          },
+          cmd_env = {
+            XDG_CONFIG_HOME = vim.fn.stdpath('config'),
           },
         },
         ruff = {
@@ -88,6 +107,8 @@ return {
           end
         },
       }
+
+      require('features.cpp.init').setup()
     end
   },
 }

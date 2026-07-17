@@ -1,6 +1,7 @@
 {
-  "blink.cmp": { "branch": "main", "commit": "5aa67dac95d5aed426013633e7b9f63d40c80134" },
+  "blink.cmp": { "branch": "main", "commit": "0f54bd78892f587db4dcf100a23eaddfc2a9df7d" },
   "blink.lib": { "branch": "main", "commit": "5876dd95deeb70aadbe9f1c0b7117a135061cdac" },
+  "clangd_extensions.nvim": { "branch": "main", "commit": "997d20e6bc83ea1a6223c08d2b9db76943abf56b" },
   "claudecode.nvim": { "branch": "main", "commit": "102d835c964069c9c5e37abaf05ae4f9c3ee6f00" },
   "friendly-snippets": { "branch": "main", "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9" },
   "indent-blankline.nvim": { "branch": "master", "commit": "d28a3f70721c79e3c5f6693057ae929f3d9c0a03" },
