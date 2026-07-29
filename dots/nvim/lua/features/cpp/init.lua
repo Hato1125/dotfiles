@@ -1,6 +1,5 @@
 return {
   setup = function ()
-    require('features.cpp.impl.class_layout').setup()
-    require('features.cpp.impl.type_hierarchy').setup()
+    require('features.cpp.impl.class_info').setup()
   end
 }

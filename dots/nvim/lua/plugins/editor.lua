@@ -21,6 +21,7 @@ return {
         'html',
         'javascript',
         'typescript',
+        'tsx',
         'dart',
         'json',
         'toml',
