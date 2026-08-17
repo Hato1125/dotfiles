@@ -1,11 +1,8 @@
 #!/bin/bash
 
-opts=("${@:1}")
 audio_lowlatency=false
 usb_overclock=true
 usb_overclock_applied=false
-game=""
-game_index=0
 
 disable_hda_power_save=false
 hda_power_save=0
@@ -29,13 +26,15 @@ error() {
 usage() {
   cat <<'EOF'
 Usage:
-  game.sh [OPTIONS] --game COMMAND
+  game.sh [OPTIONS] -- COMMAND [ARGS...]
 
 Options:
-  --game COMMAND                 Launch COMMAND with GameMode.
   --enable-audio-lowlatency      Run through pw-jack and set low-latency PipeWire options.
   --disable-usb-overclock        Do not apply USB overclock override.
   -h, --help                     Show this help.
+
+Examples:
+  game.sh --enable-audio-lowlatency -- %command%
 
 Environment:
   USB_OC_DEVICES                 Space-separated USB devices for usb_oc override.
@@ -142,36 +141,37 @@ cleanup() {
   fi
 }
 
-for ((i = 0; i < ${#opts[@]}; i++)); do
-  opt="${opts[i]}"
-
-  case "$opt" in
+while [[ $# -gt 0 ]]; do
+  case "$1" in
     -h|--help)
       usage
       exit 0
       ;;
     --enable-audio-lowlatency)
-      audio_lowlatency=true ;;
+      audio_lowlatency=true
+      shift
+      ;;
     --disable-usb-overclock)
-      usb_overclock=false ;;
-    --game)
-      if (( i + 1 < ${#opts[@]} )); then
-        game="${opts[i + 1]}"
-        ((i++))
-        game_index=$i
-      fi
+      usb_overclock=false
+      shift
+      ;;
+    --)
+      shift
       break
       ;;
-    *)
-      error "unknown option: $opt"
+    -*)
+      error "unknown option: $1"
       echo "Try 'game.sh --help' for usage." >&2
       exit 1
+      ;;
+    *)
+      break
       ;;
   esac
 done
 
-if [ -z "$game" ]; then
-  error "missing required option: --game COMMAND"
+if [[ $# -eq 0 ]]; then
+  error "missing COMMAND"
   echo "Try 'game.sh --help' for usage." >&2
   exit 1
 fi
@@ -253,7 +253,7 @@ if [[ "$audio_lowlatency" == true ]]; then
     fi
   fi
 
-  app2unit -- gamemoderun pw-jack "$game" "${@:$game_index+2}"
+  app2unit -- gamemoderun pw-jack "$@"
 else
-  app2unit -- gamemoderun "$game" "${@:$game_index+2}"
+  app2unit -- gamemoderun "$@"
 fi
