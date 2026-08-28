@@ -38,7 +38,6 @@ return {
       'williamboman/mason-lspconfig.nvim',
       'saghen/blink.cmp',
       'folke/lazydev.nvim',
-      'MunifTanjim/nui.nvim',
     },
     event = {
       'BufReadPre',
@@ -108,7 +107,6 @@ return {
         },
       }
 
-      require('features.cpp.init').setup()
     end
   },
 }
