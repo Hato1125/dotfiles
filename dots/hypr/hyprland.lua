@@ -71,7 +71,7 @@ local mod = 'SUPER'
 
 local editor = os.getenv('EDITOR')
 if editor ~= nil and editor ~= '' then
-  hl.bind(mod .. ' + E', hl.dsp.exec_cmd('app2unit -T -- ' .. editor))
+  hl.bind(mod .. ' + E', hl.dsp.exec_cmd('app2unit ' .. editor))
 end
 
 local browser = os.getenv('BROWSER')
