@@ -69,12 +69,20 @@ hl.config({
 
 local mod = 'SUPER'
 
+local editor = os.getenv('EDITOR')
+if editor ~= nil and editor ~= '' then
+  hl.bind(mod .. ' + E', hl.dsp.exec_cmd('app2unit -T -- ' .. editor))
+end
+
+local browser = os.getenv('BROWSER')
+if browser ~= nil and browser ~= '' then
+  hl.bind(mod .. ' + W', hl.dsp.exec_cmd('app2unit ' .. browser))
+end
+
 hl.bind(mod .. ' + T', hl.dsp.exec_cmd('app2unit kitty'))
-hl.bind(mod .. ' + E', hl.dsp.exec_cmd('app2unit zeditor -n'))
 hl.bind(mod .. ' + F', hl.dsp.exec_cmd('app2unit nautilus -w'))
 hl.bind(mod .. ' + B', hl.dsp.exec_cmd('app2unit blueberry'))
 hl.bind(mod .. ' + M', hl.dsp.exec_cmd('app2unit missioncenter'))
-hl.bind(mod .. ' + W', hl.dsp.exec_cmd('app2unit zen-browser'))
 
 hl.bind(mod .. ' + P', hl.dsp.window.pin())
 

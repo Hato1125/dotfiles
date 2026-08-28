@@ -1,3 +1,8 @@
+export PATH="$HOME/.local/bin:$PATH"
+
+export EDITOR="zeditor"
+export BROWSER="helium-browser"
+
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DESKTOP_DIR="$HOME/Desktop"
 export XDG_DOWNLOAD_DIR="$HOME/Downloads"

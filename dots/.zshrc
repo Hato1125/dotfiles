@@ -1,10 +1,3 @@
-export PATH="$HOME/.local/bin:$PATH"
-
-export MOZ_LEGACY_PROFILES=0
-export EDITOR="nvim"
-export BROWSER="zen-browser"
-export USB_OC_DEVICES="05ac:024f 31e3:1322"
-
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 
 [ -f $XDG_CONFIG_HOME/env ] && source $XDG_CONFIG_HOME/env
