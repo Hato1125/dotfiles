@@ -14,7 +14,7 @@
             }
         ]
     },
-    "ipv6": false,
+    "ipv6": true,
     "anonymous_crash_reports": true,
     "features": {
         "netshield": 0,
