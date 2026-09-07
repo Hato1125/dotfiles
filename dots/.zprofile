@@ -1,6 +1,6 @@
 export PATH="$HOME/.local/bin:$PATH"
 
-export EDITOR="zeditor"
+export EDITOR="nvim"
 export BROWSER="helium-browser"
 
 export XDG_CONFIG_HOME="$HOME/.config"
