@@ -8,6 +8,7 @@
 |適用範囲|ファイル|
 |---|---|
 |常時|`~/.config/ai/rules/common.md`|
+|shellでコマンドを実行するとき|`~/.config/ai/rules/rtk.md`|
 |コードを書く・直すとき|`~/.config/ai/rules/comment.md`|
 |サブエージェントへ委譲するとき|`~/.config/ai/rules/delegate.md`|
 
