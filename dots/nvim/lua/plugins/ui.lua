@@ -87,6 +87,38 @@ return {
     keys = {
       { '<leader>ff', function() require('telescope.builtin').find_files() end },
       { '<leader>fg', function() require('telescope.builtin').live_grep() end },
-    }
+      { '<leader>fr', function() require('telescope.builtin').lsp_references() end },
+    },
+    config = function()
+      require('telescope').setup {
+        defaults = {
+          layout_strategy = 'flex',
+          layout_config = {
+            horizontal = {
+              width = 0.90,
+              height = 0.85,
+              preview_width = 0.6,
+            },
+          },
+          borderchars = {
+            results = { '─', '│', ' ', '│', '╭', '┬', '│', '│' },
+            prompt = { '─', '│', '─', '│', '├', '┤', '┴', '╰' },
+            preview = { '─', '│', '─', ' ', '─', '╮', '╯', '─' },
+          },
+        },
+        pickers = {
+          lsp_references = { show_line = false },
+          live_grep = { show_line = false },
+          grep_string = { show_line = false },
+        },
+      }
+
+      vim.api.nvim_create_autocmd('User', {
+        pattern = 'TelescopePreviewerLoaded',
+        callback = function(args)
+          vim.wo.number = args.data.filetype ~= 'help'
+        end,
+      })
+    end
   },
 }
