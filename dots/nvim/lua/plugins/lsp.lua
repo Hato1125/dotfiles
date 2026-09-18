@@ -17,21 +17,6 @@ return {
     },
   },
   {
-    'https://git.sr.ht/~p00f/clangd_extensions.nvim',
-    ft = {
-      'c',
-      'cpp',
-    },
-    opts = {},
-    keys = {
-      {
-        '<leader>ch',
-        '<cmd>ClangdTypeHierarchy<CR>',
-        desc = 'Show C/C++ type hierarchy',
-      },
-    },
-  },
-  {
     'neovim/nvim-lspconfig',
     dependencies = {
       'williamboman/mason.nvim',
@@ -48,13 +33,8 @@ return {
         clangd = {
           cmd = {
             'clangd',
-            '--background-index',
-            '--clang-tidy',
-            '--header-insertion=iwyu',
-            '--completion-style=detailed',
-          },
-          cmd_env = {
-            XDG_CONFIG_HOME = vim.fn.stdpath('config'),
+            '--pch-storage=memory',
+            '-j=14',
           },
         },
         ruff = {
@@ -74,6 +54,9 @@ return {
       local lspconfig = require('lspconfig')
       local mason_lspconfig = require('mason-lspconfig')
       local capabilities = require('blink.cmp').get_lsp_capabilities()
+
+      vim.lsp.config('gleam', { capabilities = capabilities })
+      vim.lsp.enable('gleam')
 
       mason_lspconfig.setup {
         ensure_installed = {

@@ -15,6 +15,7 @@ return {
         'c',
         'cpp',
         'rust',
+        'gleam',
         'glsl',
         'cmake',
         'css',
