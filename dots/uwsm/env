@@ -1,5 +1,4 @@
 export MOZ_LEGACY_PROFILES=0
-export USB_OC_DEVICES="05ac:024f 31e3:1322"
 
 export QT_IM_MODULE=fcitx
 export QT_QPA_PLATFORM="wayland;xcb"
