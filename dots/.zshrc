@@ -4,6 +4,7 @@ export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias vi='nvim'
 
 autoload -Uz colors
 colors
