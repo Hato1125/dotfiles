@@ -56,13 +56,11 @@ return {
   },
   {
     'IogaMaster/neocord',
-    event = 'VeryLazy',
-    config = function()
-      require('neocord').setup {
-        logo = os.getenv('NVIM_DISCORD_RPC_LOGO_URL'),
-        client_id = os.getenv('NVIM_DISCORD_RPC_CLIENT_ID'),
-      }
-    end
+    event = {
+      'BufReadPre',
+      'BufNewFile',
+    },
+    opts = {}
   },
   {
     'nvim-telescope/telescope.nvim',
