@@ -24,18 +24,10 @@ vim.opt.listchars = {
 }
 vim.opt.clipboard = 'unnamedplus'
 
-vim.api.nvim_create_autocmd({
-  'BufEnter',
-  'CursorHold',
-  'CursorHoldI',
-  'FocusGained',
-  'TermClose',
-  'TermLeave',
-}, {
-  group = vim.api.nvim_create_augroup('AutoReloadExternalChanges', { clear = true }),
-  callback = function()
-    if vim.fn.mode() ~= 'c' then
-      vim.cmd('silent! checktime')
-    end
-  end,
-})
+vim.diagnostic.config {
+  float = {
+    border = 'rounded',
+    header = '',
+    prefix = '',
+  }
+}

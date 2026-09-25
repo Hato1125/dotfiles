@@ -21,6 +21,12 @@ return {
     'nvim-lualine/lualine.nvim',
     event = 'VeryLazy',
     config = function()
+      local scheme = {
+        a = { fg = '#000000', bg = '#ffffff', gui = 'bold' },
+        b = { fg = '#000000', bg = '#ffffff' },
+        c = { fg = '#000000', bg = '#ffffff' },
+      }
+
       require('lualine').setup {
         options = {
           disabled_filetypes = {
@@ -29,31 +35,11 @@ return {
             'snacks_terminal',
           },
           theme = {
-            normal = {
-              a = { fg = '#000000', bg = '#ffffff', gui = 'bold' },
-              b = { fg = '#000000', bg = '#ffffff' },
-              c = { fg = '#000000', bg = '#ffffff' },
-            },
-            insert = {
-              a = { fg = '#000000', bg = '#ffffff', gui = 'bold' },
-              b = { fg = '#000000', bg = '#ffffff' },
-              c = { fg = '#000000', bg = '#ffffff' },
-            },
-            visual = {
-              a = { fg = '#000000', bg = '#ffffff', gui = 'bold' },
-              b = { fg = '#000000', bg = '#ffffff' },
-              c = { fg = '#000000', bg = '#ffffff' },
-            },
-            replace = {
-              a = { fg = '#000000', bg = '#ffffff', gui = 'bold' },
-              b = { fg = '#000000', bg = '#ffffff' },
-              c = { fg = '#000000', bg = '#ffffff' },
-            },
-            inactive = {
-              a = { fg = '#000000', bg = '#ffffff', gui = 'bold' },
-              b = { fg = '#000000', bg = '#ffffff' },
-              c = { fg = '#000000', bg = '#ffffff' },
-            },
+            normal = scheme,
+            insert = scheme,
+            visual = scheme,
+            replace = scheme,
+            inactive = scheme,
           },
           section_separators = '',
           component_separators = '',
@@ -121,4 +107,21 @@ return {
       })
     end
   },
+  {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    keys = {
+      { '<leader>aa', '<cmd>1ToggleTerm direction=vertical<CR>' },
+      { '<leader>\\', '<cmd>2ToggleTerm direction=horizontal<CR>' },
+    },
+    opts = {
+      on_open = function(term)
+        if term.direction == 'vertical' then
+          vim.cmd('wincmd L')
+        elseif term.direction == 'horizontal' then
+          vim.cmd('wincmd J')
+        end
+      end,
+    },
+  }
 }
