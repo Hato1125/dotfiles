@@ -81,7 +81,6 @@ end
 
 hl.bind(mod .. ' + T', hl.dsp.exec_cmd('app2unit kitty'))
 hl.bind(mod .. ' + F', hl.dsp.exec_cmd('app2unit nautilus -w'))
-hl.bind(mod .. ' + B', hl.dsp.exec_cmd('app2unit blueberry'))
 hl.bind(mod .. ' + M', hl.dsp.exec_cmd('app2unit missioncenter'))
 
 hl.bind(mod .. ' + P', hl.dsp.window.pin())
