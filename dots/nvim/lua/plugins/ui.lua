@@ -105,21 +105,4 @@ return {
       })
     end
   },
-  {
-    'akinsho/toggleterm.nvim',
-    version = "*",
-    keys = {
-      { '<leader>aa', '<cmd>1ToggleTerm direction=vertical<CR>' },
-      { '<leader>\\', '<cmd>2ToggleTerm direction=horizontal<CR>' },
-    },
-    opts = {
-      on_open = function(term)
-        if term.direction == 'vertical' then
-          vim.cmd('wincmd L')
-        elseif term.direction == 'horizontal' then
-          vim.cmd('wincmd J')
-        end
-      end,
-    },
-  }
 }
