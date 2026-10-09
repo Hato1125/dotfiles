@@ -64,3 +64,5 @@ dots/zed/prompts/
 
 .ssh/
 .gnupg/
+
+default-id

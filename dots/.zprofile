@@ -1,5 +1,6 @@
 export PATH="$HOME/.local/bin:$PATH"
 
+export PAGER="less"
 export EDITOR="nvim"
 export BROWSER="helium-browser"
 
