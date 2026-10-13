@@ -1,43 +1,18 @@
-format = """
-[](#FFFFFF)\
-$os\
-$username\
-$directory\
-$git_branch\
-$git_status\
-[ ](fg:#FFFFFF)\
-"""
+format = "\\$$directory$git_branch$git_status"
 
 add_newline = false
 
-[username]
-show_always = true
-style_user = "bg:#FFFFFF fg:#000000"
-style_root = "bg:#FFFFFF fg:#000000"
-format = '[$user ]($style)'
-disabled = false
-
-[os]
-style = "bg:#FFFFFF fg:#000000"
-disabled = true
-
 [directory]
-style = "bg:#FFFFFF fg:#000000"
+style = "fg:#ffffff"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
-
 [git_branch]
 symbol = ""
-style = "bg:#f94545 fg:#FFFFFF"
-format = "[](fg:#f94545 bg:#ffffff)[ $symbol $branch ]($style)"
+style = "fg:#ffffff"
+format = "[ $symbol $branch ]($style)"
 
 [git_status]
-style = "bg:#f94545 fg:#FFFFFF"
-format = "[$all_status$ahead_behind ]($style)[ ](fg:#f94545 bg:#ffffff)"
+style = "fg:#ffffff"
+format = "[$all_status$ahead_behind ]($style)"
